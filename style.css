@@ -1,10 +1,11 @@
 :root {
     --bg : #fff;
-    --width: 1440px;
     --Green : #B9FF66;
 }
 
-
+html {
+        font-size: 16px;
+    }
 
 * {
     margin: 0;
@@ -12,40 +13,42 @@
     box-sizing: border-box;
     font-family: "Space Grotesk", sans-serif;
     font-optical-sizing: auto;
+    scroll-behavior: smooth;
 }
 
 .homepage {
-    min-width: var(--width);
+    width: 100%;
     background: var(--bg);
-
     overflow-x: hidden;
-
 }
-
 
 .landingpage {
     display: flex;
-    min-width: var(--width);
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    gap: 70px;
+    gap: 4.375rem;
 }
 
 .navbar {
-    margin-top: 60px;
+    margin-top: 3.75rem; 
     display: flex;
-    width: var(--width);
-    height: 68px;
-    padding: 0px 100px;
+    width: 100%;
+    height: 4.25rem; 
+    padding: 0 6.25rem;
     justify-content: space-between;
     align-items: center;
 }
 
+#menu {
+    display: none;
+}
+
 .frame9 {
     display: flex;
-    padding: 10px 0px;
+    padding: 0.625rem 0; 
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem; 
 }
 
 .frame10 {
@@ -53,14 +56,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 2.5rem; 
 }
 
 .frame10 li {
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem; 
 }
 
 .frame10 li a {
@@ -70,22 +73,22 @@
 
 .frame10 li button {
     display: flex;
-    padding: 20px 35px;
+    padding: 1.25rem 2.1875rem; 
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem; 
     background-color: var(--bg);
 
-    border-radius: 14px;
-    border: 1px solid var(--Dark, #191A23);
+    border-radius: 0.875rem; 
+    border: 0.0625rem solid var(--Dark, #191A23); 
 
     color: #000;
 
     text-align: center;
     font-family: "Space Grotesk";
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem;
 
     cursor: pointer;
 }
@@ -97,61 +100,58 @@
 
 header {
     display: flex;
-    width: var(--width);
-    padding: 0 100px;
+    width: 100%;
+    padding: 0 6.25rem;
     justify-content: space-between;
     align-items: flex-start;
 }
-
 
 .frame13 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 35px;
+    gap: 2.1875rem;
 }
 
 .frame13 h1 {
-    width: 531px;
+    width: 33.1875rem;
     color: #000;
 
-    /* h1 */
     font-family: "Space Grotesk";
-    font-size: 60px;
+    font-size: 3.75rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
-
 .frame13 p {
-    width: 498px;
+    width: 31.125rem; 
 
     color: #000;
     font-family: "Space Grotesk";
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px; /* 140% */
+    line-height: 1.75rem;
 }
 
 .frame13 button {
     display: flex;
-    padding: 20px 35px;
+    padding: 1.25rem 2.1875rem; 
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem; 
 
-    border-radius: 14px;
+    border-radius: 0.875rem; 
     background: var(--Dark, #191A23);
 
     color: #FFF;
 
     text-align: center;
     font-family: "Space Grotesk";
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-style: normal;
     font-weight: 400;   
-    line-height: 28px;
+    line-height: 1.75rem; 
 }
 
 .frame13 button:hover {
@@ -159,20 +159,18 @@ header {
     background-color: var(--bg);
 }
 
-
-.illustration {
-    width: 600.462px;
-    height: 515px;
+.illustration > img {
+    width: 37.5289rem; 
+    height: 32.1875rem;
     flex-shrink: 0;
 }
 
 .logotypes {
-    display: flex;
-    width: var(--width);
-    padding: 0px 100px;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: 100%;
+    padding: 0 6.25rem;
+    justify-items: center;
 }
 
 .logotypes img {
@@ -184,75 +182,73 @@ header {
     filter: grayscale(0%);
 }
 
-
 .services-subheading {
     display: flex;
-    width: var(--width);
-    margin-top: 140px;
-    padding: 0 100px;
+    width: 100%;
+    margin-top: 8.75rem; 
+    padding: 0 6.25rem; 
     align-items: flex-start;
-    gap: 40px;
+    gap: 2.5rem; 
 }
 
 .services-subheading .label {
     display: flex;
-    padding: 0 7px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    border-radius: 7px;
-    background: var(--Green, #B9FF66);
+    gap: 0.625rem; 
 }
 
 .services-subheading .label h2 {
     color: #000;
-    font-size: 40px;
+    font-size: 2.5rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    background: var(--Green, #B9FF66);
+    border-radius: 0.4375rem;
+    padding: 0 0.4375rem;
 }
 
 #services-text {
-    width: 580px;
+    width: 36.25rem; 
     flex-shrink: 0;
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-
 .services-block {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 40px;
+    gap: 2.5rem; 
 }
 
 .services-block .cards-section {
-    display: flex;
-    padding: 0 100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 6.25rem; 
     align-items: flex-start;
-    gap: 40px;
+    gap: 2.5rem; 
 }
-
 
 /* ------------------------------------------ CARD 1 ------------------------------------------------------------ */
 
-
 .services-block .cards-section .card1 {
     display: flex;
-    width: 600px;
-    padding: 50px;
+    width: 100%; 
+    padding: 3.125rem; 
     justify-content: space-between;
     align-items: center;
 
-    margin-top: 80px;
-
-    border-radius: 45px;
-    border: 1px solid var(--Dark, #191A23);
+    margin-top: 5rem; 
+    border-radius: 2.8125rem; 
+    border: 0.0625rem solid var(--Dark, #191A23); 
     background: var(--Grey, #F3F3F3);
-    box-shadow: 0 5px 0 0 #191A23;
+    box-shadow: 0 0.3125rem 0 0 #191A23; 
 }
 
 .services-block .cards-section .card1 .card-left {
@@ -260,7 +256,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 93px;
+    gap: 5.8125rem; 
 }
 
 .services-block .cards-section .card1 .card-left .heading {
@@ -271,14 +267,14 @@ header {
 
 .services-block .cards-section .card1 .card-left .heading .label {
     display: flex;
-    padding: 0 7px;
+    padding: 0 0.4375rem; 
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    border-radius: 7px;
+    gap: 0.625rem;
+    border-radius: 0.4375rem; 
     background: var(--Green, #B9FF66);
 
-    font-size: 30px;
+    font-size: 1.875rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -287,43 +283,39 @@ header {
 .services-block .cards-section .card1 .card-left .link {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0.9375rem; 
 
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem; 
 }
 
 .services-block .cards-section .card1 .card-right {
     display: flex;
-    width: 210px;
-    height: 170px;
-    padding: 2px 0 1.953px 0;
+    width: 13.125rem; 
+    height: 10.625rem; 
+    padding: 0.125rem 0 0.122rem 0; 
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
 }
 
-
-
-
 /* ------------------------------------------------------  CARD2 -------------------------------------------------------------- */
-
 
 .services-block .cards-section .card2 {
     display: flex;
-    width: 600px;
-    padding: 50px;
+    width: 100%; 
+    padding: 3.125rem; 
     justify-content: space-between;
     align-items: center;
 
-    margin-top: 80px;
+    margin-top: 5rem; 
 
-    border-radius: 45px;
-    border: 1px solid var(--Dark, #191A23);
+    border-radius: 2.8125rem;
+    border: 0.0625rem solid var(--Dark, #191A23); 
     background: var(--Green, #B9FF66);
-    box-shadow: 0 5px 0 0 #191A23;
+    box-shadow: 0 0.3125rem 0 0 #191A23; 
 }
 
 .services-block .cards-section .card2 .card-left {
@@ -331,7 +323,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 93px;
+    gap: 5.8125rem; 
 }
 
 .services-block .cards-section .card2 .card-left .heading {
@@ -342,14 +334,14 @@ header {
 
 .services-block .cards-section .card2 .card-left .heading .label {
     display: flex;
-    padding: 0 7px;
+    padding: 0 0.4375rem; 
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    border-radius: 7px;
+    gap: 0.625rem; 
+    border-radius: 0.4375rem; 
     background: #FFF;
 
-    font-size: 30px;
+    font-size: 1.875rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -358,40 +350,37 @@ header {
 .services-block .cards-section .card2 .card-left .link {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0.9375rem; 
 
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem; 
 }
 
 .services-block .cards-section .card2 .card-right {
     display: flex;
-    width: 210px;
-    height: 170px;
-    padding: 2px 0 1.953px 0;
+    width: 13.125rem; 
+    height: 10.625rem; 
+    padding: 0.125rem 0 0.122rem 0; 
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
 }
 
-
-
 /* -------------------------------------------------   CARD3 -------------------------------------------------------- */
-
 
 .services-block .cards-section .card3 {
     display: flex;
-    width: 600px;
-    padding: 50px;
+    width: 100%; 
+    padding: 3.125rem; 
     justify-content: space-between;
     align-items: center;
 
-    border-radius: 45px;
-    border: 1px solid var(--Dark, #191A23);
+    border-radius: 2.8125rem; 
+    border: 0.0625rem solid var(--Dark, #191A23); 
     background: var(--Dark, #191A23);
-    box-shadow: 0 5px 0 0 #191A23;
+    box-shadow: 0 0.3125rem 0 0 #191A23; 
 }
 
 .services-block .cards-section .card3 .card-left {
@@ -399,7 +388,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 93px;
+    gap: 5.8125rem; 
 }
 
 .services-block .cards-section .card3 .card-left .heading {
@@ -410,14 +399,14 @@ header {
 
 .services-block .cards-section .card3 .card-left .heading .label {
     display: flex;
-    padding: 0 7px;
+    padding: 0 0.4375rem; 
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    border-radius: 7px;
+    gap: 0.625rem; 
+    border-radius: 0.4375rem; 
     background: #FFF;
 
-    font-size: 30px;
+    font-size: 1.875rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -426,40 +415,37 @@ header {
 .services-block .cards-section .card3 .card-left .link {
     display: flex;
     align-items: center;
-    gap: 15px;
-    color : #fff;
-    font-size: 20px;
+    gap: 0.9375rem;
+    color: #fff;
+    font-size: 1.25rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem; 
 }
 
 .services-block .cards-section .card3 .card-right {
     display: flex;
-    width: 210px;
-    height: 170px;
-    padding: 2px 0 1.953px 0;
+    width: 13.125rem; 
+    height: 10.625rem;
+    padding: 0.125rem 0 0.122rem 0;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
 }
 
-
-
 /* -------------------------------------------------   CARD4-------------------------------------------------------- */
-
 
 .services-block .cards-section .card4 {
     display: flex;
-    width: 600px;
-    padding: 50px;
+    width: 100%; 
+    padding: 3.125rem; 
     justify-content: space-between;
     align-items: center;
     
-    border-radius: 45px;
-    border: 1px solid var(--Dark, #191A23);
+    border-radius: 2.8125rem; 
+    border: 0.0625rem solid var(--Dark, #191A23); 
     background: var(--Grey, #F3F3F3);
-    box-shadow: 0 5px 0 0 #191A23;
+    box-shadow: 0 0.3125rem 0 0 #191A23; 
 }
 
 .services-block .cards-section .card4 .card-left {
@@ -467,7 +453,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 93px;
+    gap: 5.8125rem;
 }
 
 .services-block .cards-section .card4 .card-left .heading {
@@ -478,14 +464,14 @@ header {
 
 .services-block .cards-section .card4 .card-left .heading .label {
     display: flex;
-    padding: 0 7px;
+    padding: 0 0.4375rem; 
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    border-radius: 7px;
+    gap: 0.625rem; 
+    border-radius: 0.4375rem; 
     background: var(--Green, #B9FF66);
 
-    font-size: 30px;
+    font-size: 1.875rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -494,42 +480,37 @@ header {
 .services-block .cards-section .card4 .card-left .link {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0.9375rem; 
 
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem; 
 }
 
 .services-block .cards-section .card4 .card-right {
     display: flex;
-    width: 210px;
-    height: 170px;
-    padding: 2px 0 1.953px 0;
+    width: 13.125rem; 
+    height: 10.625rem; 
+    padding: 0.125rem 0 0.122rem 0; 
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
 }
 
-
-
-
-
 /* -------------------------------------------------   CARD5 -------------------------------------------------------- */
-
 
 .services-block .cards-section .card5 {
     display: flex;
-    width: 600px;
-    padding: 50px;
+    width: 100%; 
+    padding: 3.125rem; 
     justify-content: space-between;
     align-items: center;
 
-    border-radius: 45px;
-    border: 1px solid var(--Dark, #191A23);
+    border-radius: 2.8125rem; 
+    border: 0.0625rem solid var(--Dark, #191A23); 
     background: var(--Green, #B9FF66);
-    box-shadow: 0 5px 0 0 #191A23;
+    box-shadow: 0 0.3125rem 0 0 #191A23; 
 }
 
 .services-block .cards-section .card5 .card-left {
@@ -537,7 +518,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 93px;
+    gap: 5.8125rem; 
 }
 
 .services-block .cards-section .card5 .card-left .heading {
@@ -548,14 +529,14 @@ header {
 
 .services-block .cards-section .card5 .card-left .heading .label {
     display: flex;
-    padding: 0 7px;
+    padding: 0 0.4375rem; 
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    border-radius: 7px;
+    gap: 0.625rem; 
+    border-radius: 0.4375rem; 
     background: #FFF;
 
-    font-size: 30px;
+    font-size: 1.875rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -564,40 +545,37 @@ header {
 .services-block .cards-section .card5 .card-left .link {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0.9375rem; 
 
-    font-size: 20px;
+    font-size: 1.25rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem; 
 }
 
 .services-block .cards-section .card5 .card-right {
     display: flex;
-    width: 210px;
-    height: 170px;
-    padding: 2px 0 1.953px 0;
+    width: 13.125rem; 
+    height: 10.625rem; 
+    padding: 0.125rem 0 0.122rem 0; 
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
 }
 
-
-
 /* -------------------------------------------------  CARD 6 -------------------------------------------------------- */
-
 
 .services-block .cards-section .card6 {
     display: flex;
-    width: 600px;
-    padding: 50px;
+    width: 100%; 
+    padding: 3.125rem; 
     justify-content: space-between;
     align-items: center;
 
-    border-radius: 45px;
-    border: 1px solid var(--Dark, #191A23);
+    border-radius: 2.8125rem; 
+    border: 0.0625rem solid var(--Dark, #191A23); 
     background: var(--Dark, #191A23);
-    box-shadow: 0 5px 0 0 #191A23;
+    box-shadow: 0 0.3125rem 0 0 #191A23;
 }
 
 .services-block .cards-section .card6 .card-left {
@@ -605,7 +583,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 93px;
+    gap: 5.8125rem; 
 }
 
 .services-block .cards-section .card6 .card-left .heading {
@@ -616,14 +594,14 @@ header {
 
 .services-block .cards-section .card6 .card-left .heading .label {
     display: flex;
-    padding: 0 7px;
+    padding: 0 0.4375rem; 
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    border-radius: 7px;
+    gap: 0.625rem; 
+    border-radius: 0.4375rem; 
     background: var(--Green);
 
-    font-size: 30px;
+    font-size: 1.875rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -632,115 +610,109 @@ header {
 .services-block .cards-section .card6 .card-left .link {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0.9375rem; 
     color: #fff;
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem; 
 }
 
 .services-block .cards-section .card6 .card-right {
     display: flex;
-    width: 210px;
-    height: 170px;
-    padding: 2px 0 1.953px 0;
+    width: 13.125rem; 
+    height: 10.625rem; 
+    padding: 0.125rem 0 0.122rem 0; 
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
 }
 
-
-
-
-
 .cta-block {
-    min-width: 1440px;
-    height: 394px;
+    width: 100%;
+    height: 24.625rem; 
     flex-shrink: 0;
 
-    margin-top: 80px;
+    margin-top: 5rem; 
 }
 
 .cta {
     display: flex;
-    min-width: 1440px;
-    padding: 0 100px;
+    width: 100%;
+    padding: 0 6.25rem; 
     align-items: center;
-    gap: -715px;
 }
 
 .card {
     display: flex;
-    width: 1240px;
-    height: 347px;
-    padding: 0 60px;
+    width: 100%;
+    height: 21.6875rem;
+    padding: 0 3.75rem; 
     align-items: center;
-    gap: 275px;
-    flex-shrink: 0;
 
-    border-radius: 45px;
+    position: relative;
+
+    border-radius: 2.8125rem;
     background: var(--Grey, #F3F3F3);
 }
 
 .frame19 {
+    position: absolute;
+    right: 10rem;
+
     display: flex;
-    height: 394px;
-    right: 135px;
     align-items: center;
+    justify-content: center;
 }
 
 .frame19 #illustration {
-    width: 359px;
-    height: 394.269px;
+    width: 22.4375rem; 
+    height: 24.6418rem;
 }
 
 .textnbtn {
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 26px;
+    gap: 1.625rem; 
 }
-
 
 .textnbtn h3 {
     color: #000;
 
     font-family: "Space Grotesk";
-    font-size: 30px;
+    font-size: 1.875rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
-
 .textnbtn p {
     color: #000;
 
-    /* font-family: "Space Grotesk"; */
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-
 .textnbtn button {
     display: flex;
-    padding: 20px 35px;
+    padding: 1.25rem 2.1875rem; 
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem; 
 
-    border-radius: 14px;
+    border-radius: 0.875rem;
     background: var(--Dark, #191A23);
 
     color: #FFF;
     text-align: center;
     font-family: "Space Grotesk";
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px; 
+    line-height: 1.75rem; 
 
     transition: 100ms ease-in-out;
 }
@@ -752,83 +724,73 @@ header {
     transition: 100ms ease-in-out;
 }
 
-
-
-
-
 .case-studies-subheading {
     display: flex;
-    width: var(--width);
-    margin-top: 140px;
-    padding: 0 100px;
+    width: 100%;
+    margin-top: 8.75rem; 
+    padding: 0 6.25rem; 
     align-items: flex-start;
-    gap: 40px;
+    gap: 2.5rem; 
 }
 
 .case-studies-subheading .label {
     display: flex;
-    padding: 0 7px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    border-radius: 7px;
-    background: var(--Green, #B9FF66);
+    gap: 0.625rem; 
 }
 
 .case-studies-subheading .label h2 {
     color: #000;
-    font-size: 40px;
+    font-size: 2.5rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    border-radius: 0.4375rem; 
+    background: var(--Green, #B9FF66);
+    padding: 0 0.4375rem;
 }
 
 #case-studies-text {
-    width: 580px;
+    width: 36.25rem; 
     flex-shrink: 0;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-
-
-
 .case-studies-block {
-
-    margin-top: 80px;
+    margin-top: 5rem; 
 
     display: inline-flex;
-    padding: 0 100px;
+    padding: 0 6.25rem; 
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem;
 }
-
 
 .case-studies {
     display: flex;
-    padding: 70px 60px;
+    padding: 4.375rem 3.75rem; 
     align-items: flex-start;
-    gap: 64px;
+    gap: 4rem;
 
-    border-radius: 45px;
+    border-radius: 2.8125rem; 
     background: var(--Dark, #191A23);
 }
-
 
 .case-study {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 1.25rem;
 }
 
 .case-study p {
     color: #FFF;
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -837,42 +799,37 @@ header {
 .case-study .link {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0.9375rem;
 }
 
 .case-study .link p {
     color: var(--Green, #B9FF66);
     font-family: "Space Grotesk";
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem;
 }
 
-
 .line {
-    width: 1px;
-    height: 186px;
+    width: 0.0625rem; 
+    height: 11.625rem;
 
     background: #fff;
 }
 
-
-
 .process-subheading {
-
-    margin-top: 140px;
+    margin-top: 8.75rem;
 
     display: flex;
-    min-width: 1440px;
-    padding: 0 100px;
+    width: 100%;
+    padding: 0 6.25rem; 
     align-items: flex-start;
-    gap: 40px;
+    gap: 2.5rem; 
 }
 
-
 .process-subheading .process-text {
-    width: 292px;
+    width: 18.25rem; 
     flex-shrink: 0;
 }
 
@@ -884,12 +841,11 @@ header {
 
 .process-subheading .process-header .label {
     display: flex;
-    padding: 0 7px;
+    padding: 0 0.4375rem; 
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-
-    border-radius: 7px;
+    gap: 0.625rem; 
+    border-radius: 0.4375rem; 
     background: var(--Green, #B9FF66);
 }
 
@@ -897,59 +853,48 @@ header {
     color: #000;
 
     font-family: "Space Grotesk";
-    font-size: 40px;
+    font-size: 2.5rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
-.process-subheading .process-text {
-    width: 292px;
-    flex-shrink: 0;
-}
-
 .process-subheading .process-text p {
     color: #000;
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-
 .process-block {
-
-    margin-top: 80px;
+    margin-top: 5rem; 
+    width: 100%;
 
     display: inline-flex;
-    padding: 0 100px;
+    padding: 0 6.25rem; 
     flex-direction: column;
     align-items: flex-start;
-    gap: 30px;
+    gap: 1.875rem; 
 }
-
 
 .process-block .pb-card {
-    
     display: flex;
-    width: 1234px;
-    padding: 41px 60px;
+    width: 100%;
+    padding: 2.5625rem 3.75rem; 
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    align-items: space-between;
+    gap: 0.625rem;
 
-
-    border-radius: 45px;
-    border: 1px solid #191A23;
+    border-radius: 2.8125rem; 
+    border: 0.0625rem solid #191A23; 
     background: var(--Grey, #F3F3F3);
-    box-shadow: 0 5px 0 0 #191A23;
+    box-shadow: 0 0.3125rem 0 0 #191A23; 
 }
-
 
 .process-block .pb-card .pb-content {
     display: flex;
-    width: 1117px;
     justify-content: space-between;
     align-items: center;
 }
@@ -957,47 +902,41 @@ header {
 .process-block .pb-card .pb-content .pb-label {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 1.5625rem; 
 }
 
 .process-block .pb-card .pb-content .pb-label .pb-number {
     color: #000;
     font-family: "Space Grotesk";
-    font-size: 60px;
+    font-size: 3.75rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
 .process-block .pb-card .pb-content .pb-label .pb-text {
-    width: 612px;
     
     color: #000;
     font-family: "Space Grotesk";
-    font-size: 30px;
+    font-size: 1.875rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
-
 .process-block .pb-card .pb-content .pb-icon {
-    width: 58px;
-    height: 58px;
+    width: 3.625rem; 
+    height: 3.625rem; 
     flex-shrink: 0;
 }
 
-
-
 .team-subheading {
-
-    margin-top: 140px;
-
+    margin-top: 8.75rem; 
     display: flex;
-    min-width: 1440px;
-    padding: 0 100px;
+    width: 100%;
+    padding: 0 6.25rem; 
     align-items: flex-start;
-    gap: 40px;
+    gap: 2.5rem; 
 }
 
 .team-header {
@@ -1008,113 +947,88 @@ header {
 
 .team-label {
     display: flex;
-    padding: 0 7px;
+    padding: 0 0.4375rem; 
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem; 
 
-    border-radius: 7px;
+    border-radius: 0.4375rem; 
     background: var(--Green, #B9FF66);
 }
-
 
 .team-label h2 {
     color: #000;
 
     font-family: "Space Grotesk";
-    font-size: 40px;
+    font-size: 2.5rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
 .team-text {
-    width: 473px;
+    width: 29.5625rem; 
     flex-shrink: 0;
 
     color: #000;
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-
-
 .group-of-cards {
+    margin-top: 5rem;
+    width: 100%;
 
-    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
+    padding: 0 6.25rem;
+    gap: 2.5rem;
 }
 
-
-.goc-row {
+.goc-card {
     display: flex;
-    padding: 0 100px;
-    align-items: flex-start;
-    gap: 40px;
-}
-
-.goc-card-first-half {
-    display: flex;
-    width: 387px;
-    height: 331px;
-    padding: 40px 35px;
+    height: 20.6875rem; 
+    padding: 2.5rem 2.1875rem;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem;
 
-    border-radius: 45px;
-    border: 1px solid #191A23;
+    border-radius: 2.8125rem; 
+    border: 0.0625rem solid #191A23; 
     background: #FFF;
-    box-shadow: 0 5px 0 0 #191A23;
-}
-
-.goc-card-second-half {
-    display: flex;
-    width: 387px;
-    height: 354px;
-    padding: 40px 35px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-
-    border-radius: 45px;
-    border: 1px solid #191A23;
-    background: #FFF;
-    box-shadow: 0 5px 0 0 #191A23;
+    box-shadow: 0 0.3125rem 0 0 #191A23; 
 }
 
 .goc-content {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 28px;
+    gap: 1.75rem; 
 }
 
 .goc-person {
     display: flex;
     align-items: flex-start;
-    gap: -67px;
+    gap: -4.1875rem; 
     align-self: stretch;
 }
 
 .goc-line {
-    width: 317px;
-    height: 1px;
+    width: 100%;
+    height: 0.0625rem; 
     background: #000;
 }
 
 .goc-text {
-    width: 317px;
+    width: 100%;
     color: #000;
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -1122,9 +1036,8 @@ header {
 
 .goc-picnname {
     display: flex;
-    /* padding-right: 76px;         */
     align-items: flex-end;
-    gap: 20px;
+    gap: 1.25rem; 
     flex: 1 0 0;
 }
 
@@ -1132,99 +1045,80 @@ header {
     align-items: center;
 }
 
-
 .goc-icon {
-    width: 34px;
-    height: 34px;
+    width: 2.125rem; 
+    height: 2.125rem; 
 }
 
-
 .goc-pic {
-    width: 105.648px;
-    height: 102.823px;
+    width: 6.603rem; 
+    height: 6.4264rem; 
 }
 
 .goc-name {
-    width: 148px;
-    height: 49px;
+    width: 9.25rem; 
+    height: 3.0625rem; 
 }
 
 .goc-name h4 {
     color: #000;
 
     font-family: "Space Grotesk";
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
 .goc-name p {
-
-    width: 194px;
+    width: 12.125rem; 
 
     color: #000;
 
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-
 .goc-btn-div {
     display: flex;
     justify-content: flex-end;
-    padding: 0 100px;
+    padding: 0 6.25rem; 
 }
 
-
 .goc-button {
-
-    margin-top: 40px;
+    margin-top: 2.5rem; 
 
     display: flex;
-    width: 269px;
-    padding: 20px 35px;
+    width: 16.8125rem; 
+    padding: 1.25rem 2.1875rem; 
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem; 
 
-    border-radius: 14px;
+    border-radius: 0.875rem; 
     background: var(--Dark, #191A23);
-
 
     color: #FFF;
     text-align: center;
     font-family: "Space Grotesk";
-    font-size: 20px;
+    font-size: 1.25rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem; 
 }
-
-
-
-
-
-
-
-
-
-
 
 .testimonials-subheading {
-
-    margin-top: 100px;
+    margin-top: 6.25rem; 
 
     display: flex;
-    min-width: 1440px;
-    padding: 0 100px;
+    width: 100%;
+    padding: 0 6.25rem; 
     align-items: flex-start;
-    gap: 40px;
+    gap: 2.5rem; 
 }
-
 
 .testimonials-header {
     display: flex;
@@ -1236,7 +1130,7 @@ header {
     color: #000;
 
     font-family: "Space Grotesk";
-    font-size: 40px;
+    font-size: 2.5rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -1244,17 +1138,17 @@ header {
 
 .testimonials-label {
     display: flex;
-    padding: 0 7px;
+    padding: 0 0.4375rem; 
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem; 
 
-    border-radius: 7px;
+    border-radius: 0.4375rem; 
     background: var(--Green, #B9FF66);
 }
 
 .testimonials-text {
-    width: 473px;
+    width: 29.5625rem; 
     flex-shrink: 0;
 
     display: flex;
@@ -1262,146 +1156,108 @@ header {
     align-items: flex-start;
 }
 
-.tst {
-    min-width: 1440px;
-    padding: 0 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow-x: hidden;
-}
-
-
 .testimonials-block {
+    margin-top: 5rem; 
 
-    width: 1240px;
-
-    margin-top: 80px;
-
-    display: inline-flex;
-    padding: 84px 0 68px 0;
-    align-items: center;
-    border-radius: 45px;
-    background: var(--Dark, #191A23);
-
-    overflow-x: hidden;
-
+    width: 100%;
+    padding: 0 6.25rem; 
 }
 
-.testimonials {
-
-    margin-left: -348px;
-
+.tstn {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 124px;
+    gap: 4rem; 
+    width: 100%;
+    padding: 5.25rem 0 4.25rem 0; 
+    border-radius: 2.8125rem; 
+    background: var(--Dark, #191A23);
+}
+
+.tst {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    gap: 2.5rem; 
+}
+
+.tst::-webkit-scrollbar {
+    display: none;
 }
 
 .testimonial-cards {
     display: flex;
-    width: 1918px;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem; 
 }
 
-.testimonial-card1, .testimonial-card2, .testimonial-card3 {
+.testimonial-navigation {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 7.75rem; 
+}
+
+.testimonial-navigation .nav-stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.125rem; 
+}
+
+.testimonial-card {
+    width: 100%;
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 20px;
+    gap: 1.25rem; 
+    justify-content: center;
 }
 
-.text-bubble {
-    width: 606px;
-    height: 266px;
-
-    position: relative;
-
-    overflow-y: hidden;
-}
-
-.text-bubble > svg {
-    width: 606px;
-    height: 266px;
-    flex-shrink: 0;
-
-    fill: #191A23;
-    stroke-width: 1px;
-    stroke: var(--Green, #B9FF66);
-}
-
-.text-bubble-p {
-    width: 502px;
-    color: #FFF;
-
+.testimonial-content {
+    width: 75%;
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -25%);
 
-    font-family: "Space Grotesk";
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    color: #fff;
 }
 
-.testimonial-h4 {
-    width: 526px;
+.testimonial-content-names {
+    width: 100%;
+    margin-left: 12.5%;
+}
+
+.testimonial-content-names > h4 {
     color: var(--Green, #B9FF66);
 
     font-family: "Space Grotesk";
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
-.testimonial-p {
-    width: 526px;
+.testimonial-content-names > p {
     color: #FFF;
 
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-
-
-
-.testimonial-navigation {
-    display: flex;
-    width: 564px;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .contact-subheading {
-
-    margin-top: 140px;
+    margin-top: 8.75rem; 
 
     display: flex;
-    min-width: 1440px;
-    padding: 0 100px;
+    width: 100%;
+    padding: 0 6.25rem; 
     align-items: flex-start;
-    gap: 40px;
+    gap: 2.5rem; 
 }
 
 .contact-header {
@@ -1410,15 +1266,14 @@ header {
     align-items: flex-start;
 }
 
-
 .contact-label {
     display: flex;
-    padding: 0 7px;
+    padding: 0 0.4375rem; 
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem;
 
-    border-radius: 7px;
+    border-radius: 0.4375rem; 
     background: var(--Green, #B9FF66);
 }
 
@@ -1426,96 +1281,89 @@ header {
     color: #000;
 
     font-family: "Space Grotesk";
-    font-size: 40px;
+    font-size: 2.5rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
-
 .contact-text {
-    width: 323px;
+    width: 20.1875rem; 
     flex-shrink: 0;
 
     color: #000;
 
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-
 .contact-block {
-
-    margin-top: 80px;
+    margin-top: 5rem; 
 
     display: flex;
-    min-width: 1440px;
-    padding: 0 100px;
+    width: 100%;
+    padding: 0 6.25rem; 
     align-items: center;
-    /* gap: -367px; */
 }
-
 
 .contact-content {
     display: flex;
-    width: 1240px;
-    padding: 60px 100px 80px 100px;
+    width: 100%;
+    padding: 3.75rem 6.25rem 5rem 6.25rem; 
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem; 
     flex-shrink: 0;
 
-    border-radius: 45px;
+    border-radius: 2.8125rem; 
     background: var(--Grey, #F3F3F3);
 }
 
-
 .contact-illustration {
-    width: 691.57px;
-    height: 648px;
+    width: 43.2231rem; 
+    height: 40.5rem;
     flex-shrink: 0;
 
-    margin-left: -367px;
+    margin-left: -22.9375rem; 
 }
 
-
 .contact-form {
+    width: 556px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 40px;
+    gap: 2.5rem; 
 }
-
 
 .contact-radio-btns {
     display: flex;
     align-items: flex-start;
-    gap: 35px;
+    gap: 2.1875rem; 
 }
 
 .contact-radio-btn1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem; 
 
-    width: 96px;
-    height: 28px;
+    width: 6rem; 
+    height: 1.75rem; 
 
     cursor: pointer;
 }
 
 #contact-radio-btn1-img, #contact-radio-btn2-img {
-    height: 28px;
+    height: 1.75rem; 
 }
 
 .contact-radio-btn1-p {
     color: #000;
 
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -1525,10 +1373,10 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem; 
 
-    width: 145px;
-    height: 28px;
+    width: 9.0625rem; 
+    height: 1.75rem; 
 
     cursor: pointer;
 }
@@ -1537,166 +1385,163 @@ header {
     color: #000;
 
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-
 .contact-fields {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 25px;
+    gap: 1.5625rem; 
 }
 
 .contact-fields #field1 {
+    width: 100%;    
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 5px;
+    gap: 0.3125rem; 
 }
 
 .contact-fields #field1 p {
     color: #000;
     font-family: "Space Grotesk";
-    font-size: 16px;
+    font-size: 1rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem; 
 }
 
 .contact-fields #field1 #name {
     color: #000;
     font-family: "Space Grotesk";
-    font-size: 16px;
+    font-size: 1rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem; 
 
     display: flex;
-    width: 556px;
-    padding: 18px 30px;
+    width: 100%;
+    padding: 1.125rem 1.875rem; 
     align-items: flex-start;
-    gap: 10px;
-    border-radius: 14px;
-    border: 1px solid #000;
+    gap: 0.625rem; 
+    border-radius: 0.875rem; 
+    border: 0.0625rem solid #000; 
     background: #FFF;
 
     color: #898989;
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
 .contact-fields #field2 {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 5px;
+    gap: 0.3125rem; 
 }
 
 .contact-fields #field2 p {
     color: #000;
     font-family: "Space Grotesk";
-    font-size: 16px;
+    font-size: 1rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem; 
 }
 
 .contact-fields #field2 #email {
+    width: 100%;
     color: #000;
     font-family: "Space Grotesk";
-    font-size: 16px;
+    font-size: 1rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem; 
 
     display: flex;
-    width: 556px;
-    padding: 18px 30px;
+    padding: 1.125rem 1.875rem; 
     align-items: flex-start;
-    gap: 10px;
-    border-radius: 14px;
-    border: 1px solid #000;
+    gap: 0.625rem; 
+    border-radius: 0.875rem; 
+    border: 0.0625rem solid #000; 
     background: #FFF;
 
     color: #898989;
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-
 .contact-fields #field3 {
+    width: 100%;
     display: flex;
-    height: 223px;
+    height: 13.9375rem; 
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 5px;
+    gap: 0.3125rem; 
 }
 
 .contact-fields #field3 p {
     color: #000;
     font-family: "Space Grotesk";
-    font-size: 16px;
+    font-size: 1rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem; 
 }
 
 .contact-fields #field3 #message {
-
-    width: 556px;
-    height: 190px;
-    padding: 18px 30px;
+    width: 100%;
+    height: 11.875rem; 
+    padding: 1.125rem 1.875rem; 
     
-
     display: flex;
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem; 
     flex-shrink: 0;
 
-    border-radius: 14px;
-    border: 1px solid #000;
+    border-radius: 0.875rem; 
+    border: 0.0625rem solid #000; 
     background: #FFF;
 
     color: #898989;
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-
-
 .contact-form button {
     display: flex;
-    width: 556px;
-    padding: 20px 35px;
+    width: 100%;
+    padding: 1.25rem 2.1875rem; 
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem; 
 
-    border-radius: 14px;
+    border-radius: 0.875rem; 
     background: var(--Dark, #191A23);
-
 
     color: #FFF;
     text-align: center;
     font-family: "Space Grotesk";
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem; 
 
     transition: 100ms ease-in-out;
 }
@@ -1708,92 +1553,65 @@ header {
     transition: 100ms ease-in-out;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 footer {
-
-    margin-top: 140px;
+    width: 100%;
+    margin-top: 8.75rem; 
 
     display: inline-flex;
-    padding: 0 100px;
+    padding: 0 6.25rem;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem; 
 }
 
 .footer-block {
+    width: 100%;
     display: flex;
-    padding: 55px 60px 50px 60px;
+    padding: 3.4375rem 3.75rem 3.125rem 3.75rem; 
     flex-direction: column;
     align-items: flex-start;
-    gap: 50px;
+    gap: 3.125rem; 
 
-    border-radius: 45px 45px 0 0;
+    border-radius: 2.8125rem 2.8125rem 0 0; 
     background: var(--Dark, #191A23);
 }
 
-
 .navigation-contacts {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 66px;
+    gap: 4.125rem; 
 }
 
 .f-elements {
     display: flex;
-    width: 1121px;
+    width: 100%;
     align-items: center;
-    gap: 155px;
+    justify-content: space-between;
 }
 
 .f-logo {
     display: flex;
-    width: 180px;
-    height: 29px;
+    width: 11.25rem; 
+    height: 1.8125rem; 
     justify-content: center;
     align-items: center;
-    gap: 10.593px;
+    gap: 0.6621rem; 
     flex-shrink: 0;
 }
 
 .navigation {
     display: flex;
     align-items: flex-start;
-    gap: 40px;
+    gap: 2.5rem; 
+    list-style: none;
 }
 
 .navigation li a {
     color: #FFF;
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -1803,34 +1621,32 @@ footer {
     text-decoration-thickness: auto;
     text-underline-offset: auto;
     text-underline-position: from-font;
-    list-style: none;
 }
 
 .social-icons {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 1.25rem; 
 }
-
 
 .frame26 {
-
-    width: 1120px;
+    width: 100%;
     display: flex;
     align-items: flex-start;
-    gap: 154px;
+    gap: 9.625rem; 
 }
 
-
 .contact-us {
+    width: fit-content;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 27px;
+    gap: 1.6875rem;
 }
 
 .contact-us-header {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1838,12 +1654,12 @@ footer {
 
 .contact-us-header-label {
     display: flex;
-    padding: 0 7px;
+    padding: 0 0.4375rem; 
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem; 
 
-    border-radius: 7px;
+    border-radius: 0.4375rem; 
     background: var(--Green, #B9FF66);
 }
 
@@ -1851,117 +1667,123 @@ footer {
     color: #000;
 
     font-family: "Space Grotesk";
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
-
 .contact-us-info {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 1.25rem; 
 }
 
-
 .contact-us-info-p {
-
-    width: 332px;
+    width: 20.75rem;
     color: #FFF;
 
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-
 .subs-block {
+    width: 100%;
     display: flex;
-    padding: 58px 40px;
+    padding: 3.625rem 2.5rem; 
     align-items: flex-start;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 1.25rem; 
 
-    border-radius: 14px;
+    border-radius: 0.875rem; 
     background: #292A32;
 }
 
 .subs-block-field {
     display: flex;
     width: 285px;
-    padding: 22px 35px;
+    padding: 1.375rem 2.1875rem; 
     align-items: flex-start;
-    gap: 10px;
+    gap: 0.625rem; 
 
-    border-radius: 14px;
-    border: 1px solid #FFF;
+    border-radius: 0.875rem; 
+    border: 0.0625rem solid #FFF; 
 }
 
 .subs-block-field p {
     color: #FFF;
 
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
 .subs-block-button {
+    width: 285px;
     display: flex;
     padding: 20px 35px;
     align-items: flex-start;
-    gap: 10px;
+    justify-content: center;
+    gap: 0.625rem; 
 
-    border-radius: 14px;
+    border-radius: 0.875rem; 
     background: var(--Green, #B9FF66);
 
     color: var(--Black, #000);
     text-align: center;
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem; 
 }
 
+.subs-block-button::before { 
+    content: attr(data-text-full);
+}
 
 .f-line-text {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 50px;
+    gap: 3.125rem; 
 }
 
 .f-line {
-    width: 1120px;
-    height: 1px;
+    width: 100%;
+    height: 0.0625rem; 
     background: #fff;
 }
 
 .f-text {
+    width: 100%;
     display: flex;
     align-items: flex-start;
-    justify-content: center;
-    gap: 40px;
+    justify-content: space-between;
+    gap: 2.5rem; 
 }
 
 .f-text p {
     color: #FFF;
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem; 
 }
 
 #f-text-pp {
     color: #FFF;
     font-family: "Space Grotesk";
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -1971,4 +1793,485 @@ footer {
     text-decoration-thickness: auto;
     text-underline-offset: auto;
     text-underline-position: from-font;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== MEDIUM DESKTOPS (1280px - 1439px) ===== */
+@media (max-width: 1439px) { 
+
+
+    html {
+        font-size: 15px;
+    }
+
+
+    .group-of-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .subs-block {
+        width: 100%;
+    }
+
+    .subs-block-button { 
+        width: 100%;
+    }
+
+    .subs-block-field {
+        width: 100%;
+    }
+
+
+}
+
+/* ===== SMALL DESKTOPS / LARGE TABLETS (1024px - 1279px) ===== */
+@media (max-width: 1279px) {
+
+
+    html {
+        font-size: 14px;
+    }
+
+
+    .frame9 > a > img {
+        width: 12rem;
+    }
+
+
+    .frame10 li, .frame10 li button {
+        font-size: 1rem;
+    }
+
+
+
+
+
+    .frame13 h1 {
+        width: 25.1875rem;
+        color: #000;
+
+        font-family: "Space Grotesk";
+        font-size: 2.5rem; 
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    .frame13 p {
+        width: 25.125rem; 
+
+        color: #000;
+        font-family: "Space Grotesk";
+        font-size: 1.25rem; 
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.75rem;
+    }
+
+    .frame13 button {
+        display: flex;
+        padding: 1.25rem 2.1875rem; 
+        align-items: flex-start;
+        gap: 0.625rem; 
+
+        border-radius: 0.875rem; 
+        background: var(--Dark, #191A23);
+
+        color: #FFF;
+
+        text-align: center;
+        font-family: "Space Grotesk";
+        font-size: 1.25rem; 
+        font-style: normal;
+        font-weight: 400;   
+        line-height: 1.75rem; 
+    }
+
+    .illustration > img {
+        width: 32.5289rem; 
+        height: 27.1875rem;
+        flex-shrink: 0; 
+    }
+
+    .logotypes > img {
+        width: 7rem;
+    }
+
+    .services-block .cards-section .card1 .card-left,
+    .services-block .cards-section .card2 .card-left,
+    .services-block .cards-section .card3 .card-left,
+    .services-block .cards-section .card4 .card-left,
+    .services-block .cards-section .card5 .card-left,
+    .services-block .cards-section .card6 .card-left {
+        gap: 3.8125rem; 
+    }
+
+    .services-block .cards-section .card1 .card-left .heading .label,
+    .services-block .cards-section .card2 .card-left .heading .label,
+    .services-block .cards-section .card3 .card-left .heading .label,
+    .services-block .cards-section .card4 .card-left .heading .label,
+    .services-block .cards-section .card5 .card-left .heading .label,
+    .services-block .cards-section .card6 .card-left .heading .label {
+        font-size: 1.5rem; 
+    }
+
+    
+
+    .services-block .cards-section .card1 .card-right, .services-block .cards-section .card1 .card-right > img,
+    .services-block .cards-section .card2 .card-right, .services-block .cards-section .card2 .card-right > img,
+    .services-block .cards-section .card3 .card-right, .services-block .cards-section .card3 .card-right > img,
+    .services-block .cards-section .card4 .card-right, .services-block .cards-section .card4 .card-right > img,
+    .services-block .cards-section .card5 .card-right, .services-block .cards-section .card5 .card-right > img,
+    .services-block .cards-section .card6 .card-right, .services-block .cards-section .card6 .card-right > img {
+        width: 9.125rem; 
+        height: 6.625rem; 
+    }
+
+
+    .f-elements {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .f-elements > .navigation {
+        gap: 1.5rem;
+    }
+
+    .f-logo {
+        width: 9.25rem;
+        height: 1.75rem;
+    }
+
+    .frame26 {
+        gap: 3.625rem;
+    }
+
+    .contact-us-info-p {
+        width: 15rem;
+    }
+
+
+
+}
+
+/* ===== TABLETS LANDSCAPE (768px - 1023px) ===== */
+@media (max-width: 1023px) { 
+
+    html {
+        font-size: 13px;
+    }
+
+    .frame10 { 
+        display: none;
+    }
+    
+    #menu {
+        display: block;
+    }
+
+    header {
+        flex-direction: column-reverse;
+    }
+
+    .frame13{
+        width: 100%;
+        align-items: center;
+    }
+
+    .frame13 > h1, .frame13 > p {
+        text-align: center;
+    }
+
+    .frame13 > p {
+        width: 100%;
+    }
+
+    .illustration, .illustration > img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .logotypes {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 20px;
+        align-items: center;
+        justify-items: center;
+        
+    }
+
+    .services-block .cards-section {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .services-block .cards-section .card2 {
+        margin-top: 0;
+    }
+
+    .services-block .cards-section .card1 .card-right, .services-block .cards-section .card1 .card-right > img,
+    .services-block .cards-section .card2 .card-right, .services-block .cards-section .card2 .card-right > img,
+    .services-block .cards-section .card3 .card-right, .services-block .cards-section .card3 .card-right > img,
+    .services-block .cards-section .card4 .card-right, .services-block .cards-section .card4 .card-right > img,
+    .services-block .cards-section .card5 .card-right, .services-block .cards-section .card5 .card-right > img,
+    .services-block .cards-section .card6 .card-right, .services-block .cards-section .card6 .card-right > img {
+        width: 13.125rem; 
+        height: 10.625rem; 
+    }
+
+    .frame19 #illustration {
+        width: 17.4375rem;
+        height: 19.6418rem;
+    }
+
+    .services-subheading .label h2, 
+    .case-studies-subheading .label h2, 
+    .process-subheading .process-header .label h2,
+    .team-label h2,
+    .testimonials-h2,
+    .contact-label h2 {
+        font-size: 2rem;
+    }
+
+
+    .case-studies {
+        flex-direction: column;
+    }
+
+    .case-studies .line {
+        height: 0.0625rem;
+        width: 100%;
+    }
+
+    .process-block .pb-card .pb-content .pb-label .pb-text {
+        font-size: 1.5rem;
+    }
+
+    .group-of-cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .goc-pic > img {
+        width: 6.603rem;
+        height: 6.4264rem;
+    }
+
+    .contact-illustration {
+        display: none;
+    }
+
+    .contact-content {
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .f-elements {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .f-logo {
+        width: 11.25rem;
+        height: 1.8125rem;
+    }
+
+    .frame26 {
+        flex-direction: column;
+    }
+
+    .contact-us, .contact-us-header, .contact-us-info, .contact-us-info-p {
+        text-align: center;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+/* ===== TABLETS PORTRAIT / MOBILE LANDSCAPE (640px - 767px) ===== */
+@media (max-width: 767px) { 
+
+    .subs-block-button::before {
+        content: attr(data-text-short)
+    }
+    
+
+}
+
+/* ===== MOBILE PORTRAIT (480px - 639px) ===== */
+@media (max-width: 639px) { 
+
+
+    html {
+        font-size: 12px;
+    }
+
+    .services-subheading, 
+    .case-studies-subheading, 
+    .process-subheading, 
+    .team-subheading, 
+    .testimonials-subheading, 
+    .contact-subheading {
+        flex-direction: column;
+    }
+
+    .services-subheading .services-header, 
+    .case-studies-subheading .case-studies-header, 
+    .process-subheading .process-header, 
+    .team-subheading .team-header,
+    .testimonials-subheading .testimonials-header, 
+    .contact-subheading .contact-header{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .services-subheading #services-text,
+    .case-studies-subheading #case-studies-text,
+    .process-subheading .process-text,
+    .team-subheading .team-text,
+    .testimonials-subheading .testimonials-text,
+    .contact-subheading .contact-text {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .card, .textnbtn {
+        width: 100%;
+        align-items: center;
+    }
+
+    .textnbtn p {
+        text-align: center;
+    }
+
+    .frame19 {
+        display: none;
+    }
+
+    .contact-content {
+        width: 100%;
+        padding: 1.25rem 1rem;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    footer {
+        padding: 0;
+    }
+
+    .footer-block {
+        border-radius: 0;
+    }
+    
+}
+
+/* ===== EXTRA SMALL MOBILE (below 480px) ===== */
+@media (max-width: 479px) {
+
+    html {
+        font-size: 11px;
+    }
+
+    .navbar {
+        margin-top: 0;
+        padding: 1.25rem 1rem;
+    } 
+    
+    header {
+        padding: 1.25rem 1rem;
+    }
+
+    .logotypes {
+        padding: 1.25rem 1rem;
+    }
+
+    .services-subheading {
+        padding: 1.25rem 1rem;
+    }
+
+    .services-block .cards-section {
+        padding: 1.25rem 1rem;
+    }
+
+    .cta {
+        padding: 1.25rem 1rem;
+    }
+
+    .cta .card {
+        text-align: center;
+    }
+
+    .case-studies-subheading {
+        padding: 1.25rem 1rem;
+    }
+
+    .case-studies-block {
+        padding: 1.25rem 1rem;
+    }
+
+    .process-subheading {
+        padding: 1.25rem 1rem;
+    }
+
+    .process-block {
+        padding: 1.25rem 1rem;
+    }
+
+    .team-subheading {
+        padding: 1.25rem 1rem;
+    }
+
+    .group-of-cards {
+        padding: 1.25rem 1rem;
+    }
+
+    .testimonials-subheading {
+        padding: 1.25rem 1rem;
+    }
+
+    .testimonials-block {
+        padding: 1.25rem 1rem;
+    }
+
+    .contact-subheading {
+        padding: 1.25rem 1rem;
+    }
+
+    .contact-block {
+        padding: 1.25rem 1rem;
+    }
+
+    .footer-block {
+        padding: 1.25rem 1rem;
+    }
+
+    .subs-block {
+        flex-direction: column;
+    }
+
+    .subs-block-button {
+        justify-content: center;
+    }
+
+    .subs-block-button::before {
+        content: attr(data-text-full)
+    }
+
 }
