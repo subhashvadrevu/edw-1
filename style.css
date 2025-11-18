@@ -1433,7 +1433,6 @@ header {
     border: 0.0625rem solid #000; 
     background: #FFF;
 
-    color: #898989;
     font-family: "Space Grotesk";
     font-size: 1.125rem; 
     font-style: normal;
@@ -1475,7 +1474,6 @@ header {
     border: 0.0625rem solid #000; 
     background: #FFF;
 
-    color: #898989;
     font-family: "Space Grotesk";
     font-size: 1.125rem;
     font-style: normal;
@@ -1493,7 +1491,21 @@ header {
     gap: 0.3125rem; 
 }
 
-.contact-fields #field3 p {
+.contact-fields #field1 div, 
+.contact-fields #field2 div, 
+.contact-fields #field3 div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.contact-fields #field2 div span, 
+.contact-fields #field3 div span {
+    display: none;
+}
+
+.contact-fields #field3 div p {
     color: #000;
     font-family: "Space Grotesk";
     font-size: 1rem; 
@@ -1516,7 +1528,6 @@ header {
     border: 0.0625rem solid #000; 
     background: #FFF;
 
-    color: #898989;
     font-family: "Space Grotesk";
     font-size: 1.125rem; 
     font-style: normal;
@@ -1793,6 +1804,29 @@ footer {
     text-decoration-thickness: auto;
     text-underline-offset: auto;
     text-underline-position: from-font;
+}
+
+
+
+#toast {
+    visibility: hidden;
+
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    width: fit-content;
+    padding: 1.25rem 1rem;
+    border-radius: 0.875rem; 
+    /* border: 0.0625rem solid #fff; */
+    box-shadow: 0 0 0.875rem 0 #F3F3F3; 
+    background-color: #fff;
+    color: #22bb33;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    
 }
 
 

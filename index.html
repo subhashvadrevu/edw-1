@@ -27,7 +27,7 @@
                     <li><a href="./pages/about.html">About us</a></li>
                     <li><a href="pages/services.html">Services</a></li>
                     <li><a href="#cases">Use Cases</a></li>
-                    <li><a href="pages/pricing.html">Pricing</a></li>
+                    <li><a href="pages/team.html">Team</a></li>
                     <li><a href="pages/blog.html">Blog</a></li>
                     <li><button>Request a quote</button></li>
                 </div>
@@ -231,7 +231,7 @@
         <!-- ----------------------------------------------------------------------------------------------- -->
          <!-- contact section -->
 
-        <div class="contact-subheading">
+        <div class="contact-subheading" id="contact-us">
             <div class="contact-header">
                 <div class="contact-label">
                     <h2>Contact Us</h2>
@@ -245,38 +245,47 @@
 
         <section class="contact-block">
             <div class="contact-content">
-                <div class="contact-form">
+                <form class="contact-form">
                     <div class="contact-radio-btns">
                         <div class="contact-radio-btn1">
                             <img id="contact-radio-btn1-img" src="images/select_rb.png" alt="">
                             <p class="contact-radio-btn1-p">Say hi</p>
                         </div>
                         <div class="contact-radio-btn2">
-                            <img id="contact-radio-btn1-img" src="images/unselect_rb.png" alt="">
+                            <img id="contact-radio-btn2-img" src="images/unselect_rb.png" alt="">
                             <p class="contact-radio-btn2-p">Get a Quote</p>
                         </div>
                     </div>
 
                     <div class="contact-fields">
                         <div id="field1">
-                            <p>Name</p>
+                            <div>
+                                <p>Name</p>
+                                <span></span>
+                            </div>
                             <input type="text" name="name" id="name" placeholder="Name">
                         </div>
 
                         <div id="field2">
-                            <p>Email*</p>
-                            <input type="email" name="email" id="email" placeholder="Email">
+                            <div>
+                                <p>Email*</p>
+                                <span>This field is required</span>
+                            </div>
+                            <input type="email" name="email" id="email" placeholder="Email" required>
                         </div>
 
                         <div id="field3">
-                            <p>Message*</p>
-                            <textarea name="message" id="message" placeholder="Message"></textarea>
+                            <div>
+                                <p>Message*</p>
+                                <span>This field is required</span>
+                            </div>
+                            <textarea name="message" id="message" placeholder="Message" required></textarea>
                         </div>
 
                     </div>
                     
                     <button>Send Message</button>
-                </div>
+                </form>
             </div>
             <img class="contact-illustration" src="images/contact-Illustration.png" alt="">
         </section>
@@ -293,10 +302,10 @@
                     <div class="f-elements">
                         <a href="#"><img class="f-logo" src="images/logo-bw.png" alt=""></a>
                         <ul class="navigation">
-                            <li><a href="#team">About us</a></li>
+                            <li><a href="#contact-us">About us</a></li>
                             <li><a href="#services">Services</a></li>
                             <li><a href="#cases">Use Cases</a></li>
-                            <li><a href="pages/pricing.html">Pricing</a></li>
+                            <li><a href="#team">Team</a></li>
                             <li><a href="pages/blog.html">Blog</a></li>
                         </ul>
                         <div class="social-icons">
@@ -344,10 +353,15 @@
 
 
 
+        <div id="toast"></div>
+
+
+
+
     </div>
 
 
-
-    <script src="script.js"></script>
+    <!-- import - export work avvalante -->
+    <script type="module" src="./script.js"></script>
 
 </body>

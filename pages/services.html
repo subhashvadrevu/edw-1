@@ -3,9 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
+    <title>Positivus</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p>Services page</p>
+    
+    <div class="homepage">
+        
+        <div class="landingpage">
+
+            <!-- ----------------------------------------------------------------------------------------------- -->
+            <!-- navbar -->
+
+            <nav class="navbar" id="">
+                <div class="frame9">
+                    <a href="/"><img src="../images/Frame 9.png" alt="logo"></a>
+                </div>
+
+                <div class="frame10">
+                    <li><a href="">About us</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="/#cases">Use Cases</a></li>
+                    <li><a href="./team.html">Team</a></li>
+                    <li><a href="./blog.html">Blog</a></li>
+                    <li><button>Request a quote</button></li>
+                </div>
+
+                <img id="menu" width="36px" height="36px" src="../images/menu.png" alt="">
+            </nav>
+
+        <!-- ----------------------------------------------------------------------------------------------- -->
+         <!-- services section -->
+
+
+        <div id="services" class="services-subheading">
+            <div class="services-header">
+                <div class="label"><h2>Services</h2></div>
+                <div class="label"></div>
+                <div class="label"></div>
+            </div>
+            <div id="services-text">At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:</div>
+        </div>
+
+        
+
+
+        <section class="services-block">
+            <section class="cards-section">
+                
+            </section>
+        </section>
+
+
+
+        <!-- ----------------------------------------------------------------------------------------------- -->
+         <!-- footer -->
+
+        <footer>
+            <section class="footer-block">
+                <div class="navigation-contacts">
+                    <div class="f-elements">
+                        <a href="#"><img class="f-logo" src="../images/logo-bw.png" alt=""></a>
+                        <ul class="navigation">
+                            <li><a href="/#contact-us">About us</a></li>
+                            <li><a href="/#services">Services</a></li>
+                            <li><a href="/#cases">Use Cases</a></li>
+                            <li><a href="/#team">Team</a></li>
+                            <li><a href="./blog.html">Blog</a></li>
+                        </ul>
+                        <div class="social-icons">
+                            <img src="../images/f-linkedin.png" alt="">
+                            <img src="../images/f-facebook.png" alt="">
+                            <img src="../images/f-twitter.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="frame26">
+                        <div class="contact-us">
+                            <div class="contact-us-header">
+                                <div class="contact-us-header-label">
+                                    <h4>Contact us</h4>
+                                </div>
+                                <div class="contact-us-header-label"></div>
+                                <div class="contact-us-header-label"></div>
+                            </div>
+                            <div class="contact-us-info">
+                                <p class="contact-us-info-p">Email: info@positivus.com</p>
+                                <p class="contact-us-info-p">Phone: 555-567-8901</p>
+                                <p class="contact-us-info-p">Address: 1234 Main St <br/>Moonstone City, Stardust State 12345</p>
+                            </div>
+                        </div>
+                        <div class="subs-block">
+                            <div class="subs-block-field">
+                                <p>Email</p>
+                            </div>
+                            <button class="subs-block-button" 
+                                data-text-full = "Subscribe to news"
+                                data-text-short = "Subscribe"
+                            ></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="f-line-text">
+                    <div class="f-line"></div>
+                    <div class="f-text">
+                        <p>© 2023 Positivus. All Rights Reserved.</p>
+                        <p id="f-text-pp">Privacy Policy</p>
+                    </div>
+                </div>
+            </section>
+        </footer>
+
+
+
+        <div id="toast"></div>
+
+
+
+
+    </div>
+
+
+    <!-- import - export work avvalante -->
+    <script type="module">
+        import {initServices} from "./../js/services.js";
+        initServices();
+    </script>
+
 </body>
-</html>

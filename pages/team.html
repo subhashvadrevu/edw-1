@@ -36,67 +36,22 @@
             </nav>
 
         <!-- ----------------------------------------------------------------------------------------------- -->
-         <!-- contact section -->
+         <!-- team section -->
 
-        <div class="contact-subheading" id="contact-us">
-            <div class="contact-header">
-                <div class="contact-label">
-                    <h2>Contact Us</h2>
-                </div>
-                <div class="contact-label"></div>
-                <div class="contact-label"></div>
+
+        <div class="team-subheading" id="team">
+            <div class="team-header">
+                <div class="team-label"><h2>Team</h2></div>
+                <div class="team-label"></div>
+                <div class="team-label"></div>
             </div>
-            <p class="contact-text">Connect with Us: Let's Discuss Your Digital Marketing Needs</p>
+            <div class="team-text"><p>Meet the skilled and experienced team behind our successful digital marketing strategies</p></div>
         </div>
 
 
-        <section class="contact-block">
-            <div class="contact-content">
-                <form class="contact-form">
-                    <div class="contact-radio-btns">
-                        <div class="contact-radio-btn1">
-                            <img id="contact-radio-btn1-img" src="../images/select_rb.png" alt="">
-                            <p class="contact-radio-btn1-p">Say hi</p>
-                        </div>
-                        <div class="contact-radio-btn2">
-                            <img id="contact-radio-btn2-img" src="../images/unselect_rb.png" alt="">
-                            <p class="contact-radio-btn2-p">Get a Quote</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-fields">
-                        <div id="field1">
-                            <div>
-                                <p>Name</p>
-                                <span></span>
-                            </div>
-                            <input type="text" name="name" id="name" placeholder="Name">
-                        </div>
-
-                        <div id="field2">
-                            <div>
-                                <p>Email*</p>
-                                <span>This field is required</span>
-                            </div>
-                            <input type="email" name="email" id="email" placeholder="Email" required>
-                        </div>
-
-                        <div id="field3">
-                            <div>
-                                <p>Message*</p>
-                                <span>This field is required</span>
-                            </div>
-                            <textarea name="message" id="message" placeholder="Message" required></textarea>
-                        </div>
-
-                    </div>
-                    
-                    <button>Send Message</button>
-                </form>
-            </div>
-            <img class="contact-illustration" src="../images/contact-Illustration.png" alt="">
+        <section class="group-of-cards">
+                
         </section>
-
 
 
 
@@ -109,7 +64,7 @@
                     <div class="f-elements">
                         <a href="#"><img class="f-logo" src="../images/logo-bw.png" alt=""></a>
                         <ul class="navigation">
-                            <li><a href="#">About us</a></li>
+                            <li><a href="/#contact-us">About us</a></li>
                             <li><a href="/#services">Services</a></li>
                             <li><a href="/#cases">Use Cases</a></li>
                             <li><a href="/#team">Team</a></li>
@@ -170,8 +125,8 @@
 
     <!-- import - export work avvalante -->
     <script type="module">
-        import {initRadioButtons} from "../js/radio.js"
-        initRadioButtons();
+        import {initTeam} from "./../js/team.js";
+        initTeam();
     </script>
 
 </body>
