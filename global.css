@@ -1290,6 +1290,10 @@ header {
     gap: 7.75rem; 
 }
 
+.testimonial-navigation #left-arrow, .testimonial-navigation #right-arrow {
+    cursor: pointer;
+}
+
 .testimonial-navigation .nav-stars {
     display: flex;
     justify-content: center;
