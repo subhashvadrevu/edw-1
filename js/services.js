@@ -1,3 +1,6 @@
+import {createNewElement, appendChildToParent} from "./domFunctions.js";
+
+
 export const initServices = () => {
     const cards_section = document.getElementsByClassName("cards-section")[0];
 
@@ -60,20 +63,22 @@ export const initServices = () => {
 
 
     ]
+    
 
 
-    for(let idx in content) {
-        let card_section = document.createElement('section');
-        let card_left = document.createElement('div');
-        let heading = document.createElement('div');
-        let l1 = document.createElement('div');
-        let l2 = document.createElement('div');
-        let l3 = document.createElement('div');
-        let link = document.createElement('a');
-        let link_img = document.createElement('img');
-        let link_txt = document.createElement('div');
-        let card_right = document.createElement('div');
-        let img_right = document.createElement('img');
+
+    content.forEach((data, idx) => {
+        let card_section = createNewElement('section');
+        let card_left = createNewElement('div');
+        let heading = createNewElement('div');
+        let l1 = createNewElement('div');
+        let l2 = createNewElement('div');
+        let l3 = createNewElement('div');
+        let link = createNewElement('a');
+        let link_img = createNewElement('img');
+        let link_txt = createNewElement('div');
+        let card_right = createNewElement('div');
+        let img_right = createNewElement('img');
 
 
         let inc_idx = parseInt(idx)+1;
@@ -89,34 +94,35 @@ export const initServices = () => {
 
 
 
-        l1.textContent = content[idx]["l1"];
-        l2.textContent = content[idx]["l2"];
-        link.href = content[idx]["href"];
+        l1.textContent = data.l1;
+        l2.textContent = data.l2;
+        link.href = data.href;
         link.target = "_blank";
-        link_img.src = content[idx]["link_img_path"];
-        link_txt.textContent = content[idx]['link_txt'];
-        img_right.src = content[idx]["card_right_img_path"];
+        link_img.src = data.link_img_path;
+        link_txt.textContent = data.link_txt;
+        img_right.src = data.card_right_img_path;
 
 
 
-        card_section.appendChild(card_left);
-        card_section.appendChild(card_right);
+        appendChildToParent(card_section, card_left);
+        appendChildToParent(card_section, card_right);
 
-        card_left.appendChild(heading);
-        card_left.appendChild(link);
+        appendChildToParent(card_left, heading);
+        appendChildToParent(card_left, link);
 
-        card_right.appendChild(img_right);
+        appendChildToParent(card_right, img_right);
 
-        heading.appendChild(l1);
-        heading.appendChild(l2);
-        heading.appendChild(l3);
+        appendChildToParent(heading, l1);
+        appendChildToParent(heading, l2);
+        appendChildToParent(heading, l3);
 
-        link.appendChild(link_img);
-        link.appendChild(link_txt);
+        appendChildToParent(link, link_img);
+        appendChildToParent(link, link_txt);
 
 
 
-        cards_section.appendChild(card_section);
-    }
+        appendChildToParent(cards_section, card_section);
+    });
+
 
 };

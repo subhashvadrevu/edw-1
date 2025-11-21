@@ -28,4 +28,37 @@ export const initRadioButtons = () => {
             msg.style.color = "#000";
         }
     });
+
+
+    const header = document.getElementsByTagName('header')[0];
+    const header_left = header?.children[0];
+    const header_btn = header_left?.children[2];
+
+    header_btn?.addEventListener('click', () => {
+        window.location.href = "/#contact-us";
+        sayHiRadioBtnClick();
+    });
+
+
+    const cta_textnbtn = document.getElementsByClassName('textnbtn')[0];
+    const cta_btn = cta_textnbtn?.children[2];
+
+    cta_btn?.addEventListener('click', () => {
+        window.location.href = "/#contact-us";
+        sayHiRadioBtnClick();
+    });
+
 };
+
+export const sayHiRadioBtnClick = () => {
+    const rb1 = document.querySelector(".contact-radio-btn1");
+    rb1.click();
+};
+
+
+export const getAQuoteRadioBtnClick = () => {
+    const rb2 = document.querySelector(".contact-radio-btn2");
+    rb2.click();
+};
+
+

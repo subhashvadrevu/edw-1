@@ -1,16 +1,19 @@
+import {createNewElement, appendChildToParent} from "./domFunctions.js";
+
+
 export const initToast = () => {
     const toast = document.getElementById('toast');
 
-    const toast_text = document.createElement('p');
+    const toast_text = createNewElement('p');
     toast_text.textContent = "Form submitted successfully !"
 
-    const toast_undo = document.createElement('img');
+    const toast_undo = createNewElement('img');
     toast_undo.style.width = "30px";
     toast_undo.style.height = "30px";
-    toast_undo.src = "images/cross.svg";
+    toast_undo.src = "../images/cross.svg";
 
-    toast.appendChild(toast_text);
-    toast.appendChild(toast_undo);
+    appendChildToParent(toast, toast_text);
+    appendChildToParent(toast, toast_undo);
 
 
     toast_undo.addEventListener('click', () => {
@@ -43,10 +46,14 @@ export const initToast = () => {
 
     email_field.addEventListener('input', () => {
         field2.children[0].children[1].style.display = "none";
+        field2.children[0].children[0].style.color = "black";
+        field2.children[1].style.borderColor = "black";
     });
 
     message_field.addEventListener('input', () => {
         field3.children[0].children[1].style.display = "none";
+        field3.children[0].children[0].style.color = "black";
+        field3.children[1].style.borderColor = "black";
     });
 
 
@@ -54,16 +61,18 @@ export const initToast = () => {
 
         e.preventDefault(); // page reload stop cheyadaniki
 
-        if(email_field.value.trim() === "") {
+        if(email_field.value.trim() === "" || message_field.value.trim() === "") {
             field2.children[0].children[1].style.display = "block";
             field2.children[0].children[1].style.color = "red";
-        }
+            field2.children[0].children[0].style.color = "red";
+            field2.children[1].style.borderColor = "red";
 
-        else if(message_field.value.trim() === "") {
             field3.children[0].children[1].style.display = "block";
             field3.children[0].children[1].style.color = "red";
+            field3.children[0].children[0].style.color = "red";
+            field3.children[1].style.borderColor = "red";
         }
-        
+
         else {
             
             toast.style.visibility = "visible";

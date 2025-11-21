@@ -1,56 +1,25 @@
+import { createNewElement, appendChildToParent } from "./domFunctions.js";
+
 export const initProcessBlock = () => {
     const process_block = document.getElementsByClassName('process-block')[0];
 
     const process_block_content = [
-        {
-            "pb_number": "01",
-            "pb_text": "Consultation",
-            "pb_icon_img_path": "images/plus.png"
-        },
-
-        {
-            "pb_number": "02",
-            "pb_text": "Research and Strategy Development",
-            "pb_icon_img_path": "images/plus.png"
-        },
-
-        {
-            "pb_number": "03",
-            "pb_text": "Implementation",
-            "pb_icon_img_path": "images/plus.png"
-        },
-
-        {
-            "pb_number": "04",
-            "pb_text": "Monitoring and Optimization",
-            "pb_icon_img_path": "images/plus.png"
-        },
-
-        {
-            "pb_number": "05",
-            "pb_text": "Reporting and Communication",
-            "pb_icon_img_path": "images/plus.png"
-        },
-
-        {
-            "pb_number": "06",
-            "pb_text": "Continual Improvement",
-            "pb_icon_img_path": "images/plus.png"
-        }
+        { "pb_number": "01", "pb_text": "Consultation", "pb_icon_img_path": "images/plus.png", "pb_expand_text": "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements." },
+        { "pb_number": "02", "pb_text": "Research and Strategy Development", "pb_icon_img_path": "images/plus.png", "pb_expand_text": "After the consultation, we will conduct thorough research to identify your target audience, competitors, and industry trends. This will help us develop a comprehensive strategy to achieve your business goals." },
+        { "pb_number": "03", "pb_text": "Implementation", "pb_icon_img_path": "images/plus.png", "pb_expand_text": "Once the research is complete, we will begin implementing the strategy. This may include optimizing your website, creating content, and launching marketing campaigns. Our team will work diligently to ensure that all tasks are completed on time and within budget." },
+        { "pb_number": "04", "pb_text": "Monitoring and Optimization", "pb_icon_img_path": "images/plus.png", "pb_expand_text": "After the initial implementation, we will continuously monitor and optimize your marketing efforts to ensure maximum results. This may involve adjusting ad campaigns, refining content, and analyzing data to identify areas for improvement." },
+        { "pb_number": "05", "pb_text": "Reporting and Communication", "pb_icon_img_path": "images/plus.png", "pb_expand_text": "Throughout the process, we will provide regular reports on the performance of your marketing campaigns. This will allow you to track progress, measure success, and make informed decisions about future strategies." },
+        { "pb_number": "06", "pb_text": "Continual Improvement", "pb_icon_img_path": "images/plus.png", "pb_expand_text": "Based on the data and insights gathered from the reports, we will make recommendations for further improvement. This may involve refining existing strategies, exploring new opportunities, or adjusting tactics to better align with your business goals." }
     ];
 
-
-
-    for(let idx in process_block_content) {
-
-        let pb_card = document.createElement('div');
-        let pb_content = document.createElement('div');
-        let pb_label = document.createElement('div');
-        let pb_icon = document.createElement('div');
-        let pb_number = document.createElement('p');
-        let pb_txt = document.createElement('p');
-        let pb_icon_img = document.createElement('img');
-
+    process_block_content.forEach((data, idx) => {
+        let pb_card = createNewElement('div');
+        let pb_content = createNewElement('div');
+        let pb_label = createNewElement('div');
+        let pb_icon = createNewElement('div');
+        let pb_number = createNewElement('p');
+        let pb_txt = createNewElement('p');
+        let pb_icon_img = createNewElement('img');
 
         pb_card.className = "pb-card";
         pb_content.className = "pb-content";
@@ -59,96 +28,84 @@ export const initProcessBlock = () => {
         pb_txt.className = "pb-text";
         pb_icon.className = "icon";
 
+        appendChildToParent(pb_card, pb_content);
+        appendChildToParent(pb_content, pb_label);
+        appendChildToParent(pb_content, pb_icon);
+        appendChildToParent(pb_label, pb_number);
+        appendChildToParent(pb_label, pb_txt);
+        appendChildToParent(pb_icon, pb_icon_img);
 
-        pb_card.appendChild(pb_content);
-        pb_content.appendChild(pb_label);
-        pb_content.appendChild(pb_icon);
-        pb_label.appendChild(pb_number);
-        pb_label.appendChild(pb_txt);
-        pb_icon.appendChild(pb_icon_img);
+        pb_number.textContent = data.pb_number;
+        pb_txt.textContent = data.pb_text;
+        pb_icon_img.src = data.pb_icon_img_path;
 
+        // NEW: extra expandable section
+        const extra = createNewElement('div');
+        extra.className = "pb-extra";
 
+        const line = createNewElement('div');
+        line.className = "pb-line";
 
-        pb_number.textContent = process_block_content[idx]["pb_number"];
-        pb_txt.textContent = process_block_content[idx]["pb_text"];
-        pb_icon_img.src = process_block_content[idx]["pb_icon_img_path"];
+        const para = createNewElement('p');
+        para.className = "pb-desc";
+        para.textContent =data.pb_expand_text;
 
-
-
+        appendChildToParent(extra, line);
+        appendChildToParent(extra, para);
+        appendChildToParent(pb_card, extra);
 
         process_block.append(pb_card);
+    });
 
-    }
-
-    expandAndCollapseProcessBlock();
-
-
+    addExpandCollapseLogic();
 };
 
 
-const expandAndCollapseProcessBlock = () => {
-
-    const pbcards = document.querySelectorAll(".pb-card");
+const addExpandCollapseLogic = () => {
+    const cards = document.querySelectorAll(".pb-card");
 
     const collapseCard = (card) => {
-        if (card.children.length > 1) {
-            card.removeChild(card.children[1]);
-        }
-        if (card.children.length > 1) {
-            card.removeChild(card.children[1]);
-        }
-        card.style.backgroundColor = "#F3F3F3";
-        card.style.transition = "500ms ease";
+        const img = card.querySelector(".icon img");
+        const extra = card.querySelector(".pb-extra");
 
-        const img = card.children[0].children[1].children[0];
-        img.style.transition = "transform 500ms";
         img.style.transform = "rotate(0deg)";
         img.src = "images/plus.png";
-    }
+
+        card.classList.remove("expanded");
+
+        // Collapse slightly faster (0.7 sec)
+        extra.style.transition = "max-height 0.7s ease, opacity 0.5s ease";
+
+        extra.classList.remove("open");
+    };
+
 
     const expandCard = (card) => {
-        const img = card.children[0].children[1].children[0];
+        const img = card.querySelector(".icon img");
+        const extra = card.querySelector(".pb-extra");
 
-        card.style.backgroundColor = "#B9FF66";
-
-        card.style.transition = "500ms ease";
-        img.style.transition = "transform 500ms";
         img.style.transform = "rotate(180deg)";
         img.src = "images/minus.svg";
 
-        const line = document.createElement('div');
-        line.style.width = "100%";
-        line.style.height = "1px";
-        line.style.backgroundColor = "black";
+        card.classList.add("expanded");
 
-        const para = document.createElement('p');
-        para.textContent = "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.";
-        para.style.color = "black";
-        para.style.width = "100%";
+        // SLOWER EXPANSION (1.1 sec)
+        extra.style.transition = "max-height 1.1s ease, opacity 0.9s ease";
 
-        card.appendChild(line);
-        card.appendChild(para);
-        card.style.gap = "30px";
-    }
+        extra.classList.add("open");
+    };
 
-    pbcards.forEach(card => {
+
+    cards.forEach(card => {
         card.addEventListener("click", () => {
-            const image = card.children[0].children[1].children[0];
-            const image_name = image.src;
+            const img = card.querySelector(".icon img");
 
-            if (image_name.includes("images/plus.png")) {
-
-                pbcards.forEach(other => {
-                    if (other !== card) collapseCard(other);
-                });
-
+            if (img.src.includes("plus.png")) {
+                cards.forEach(other => { if (other !== card) collapseCard(other); });
                 expandCard(card);
-            }
-
-            else {
+            } else {
                 collapseCard(card);
             }
         });
     });
-
 };

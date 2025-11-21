@@ -20,20 +20,25 @@
 
             <nav class="navbar" id="">
                 
-            </nav>
+            </nav>       
+
+
 
         <!-- ----------------------------------------------------------------------------------------------- -->
-         <!-- team section -->
+         <!-- case studies section -->
 
-
-        <div class="team-subheading" id="team">
-        
+        <div class="case-studies-subheading" id="cases">
+            
         </div>
 
 
-        <section class="group-of-cards">
-                
+        <section class="case-studies-block">
+            <section class="case-studies">
+
+            </section>
         </section>
+
+
 
 
 
@@ -46,9 +51,6 @@
 
 
 
-        <div id="toast"></div>
-
-
 
 
     </div>
@@ -57,10 +59,10 @@
     <!-- import - export work avvalante -->
     <script type="module">
         import {initLoader} from "../js/loader.js";
-        import {initNavbar} from "./../js/navbar.js";
-        import {initSubheading} from "./../js/subheading.js";
-        import {initTeam} from "./../js/team.js";
-        import {initFooter} from "./../js/footer.js";
+        import { initNavbar } from "../js/navbar.js";
+        import { initSubheading } from "../js/subheading.js"; 
+        import { initCaseStudies } from "../js/caseStudies.js";
+        import { initFooter } from "../js/footer.js";
 
         const frame10_data = [
             {
@@ -77,13 +79,13 @@
 
             {
                 'tag': 'a',
-                'href': './usecases.html',
+                'href': '',
                 'content': 'Use Cases'
             },
 
             {
                 'tag': 'a',
-                'href': '',
+                'href': './team.html',
                 'content': 'Team'
             },
 
@@ -97,21 +99,22 @@
 
         const subheading_data = [
             {
-                'subheading_div_classname': 'team-subheading',
-                'header_div_classname': 'team-header',
-                'label_classname': 'team-label',
+                'subheading_div_classname': 'case-studies-subheading',
+                'header_div_classname': 'case-studies-header',
+                'label_classname': 'label',
                 'label_h2_classname': 'testimonials-h2',
-                'subheading_text_classname': 'team-text',
-                'label_h2_content': 'Team',
-                'subheading_text_content': 'Meet the skilled and experienced team behind our successful digital marketing strategies'
+                'subheading_text_classname': 'case-studies-text',
+                'label_h2_content': 'Case Studies',
+                'subheading_text_content': 'Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies'
             }
         ];
 
         initLoader();
         initNavbar(frame10_data);
         initSubheading(subheading_data);
-        initTeam();
+        initCaseStudies();
         initFooter();
+
     </script>
 
 </body>

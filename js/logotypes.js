@@ -1,3 +1,6 @@
+import {createNewElement, appendChildToParent} from "./domFunctions.js";
+
+
 export const initLogotypes = () => {
     const logotypes = document.getElementsByClassName("logotypes")[0];
 
@@ -10,10 +13,12 @@ export const initLogotypes = () => {
         "./../images/zoom.svg"
     ]
 
-    for(let img_path of images) {
-        let img = document.createElement('img');
+
+    images.forEach(img_path => {
+        let img = createNewElement('img');
         img.src = img_path
 
-        logotypes.appendChild(img);
-    }
+        appendChildToParent(logotypes, img);
+    });
+
 };

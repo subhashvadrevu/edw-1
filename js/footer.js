@@ -1,3 +1,7 @@
+import {createNewElement, appendChildToParent} from "./domFunctions.js";
+
+
+
 export const initFooter = () => {
     const footer = document.getElementsByTagName('footer')[0];
 
@@ -21,19 +25,25 @@ export const initFooter = () => {
         {
             'href': '/#team',
             'content': 'Team'
-        },
-
-        {
-            'href': '../pages/blog.html',
-            'content': 'Blog'
         }
     ];
 
 
     const social_icons_data = [
-        {'src': '../images/f-linkedin.png'},
-        {'src': '../images/f-facebook.png'},
-        {'src': '../images/f-twitter.png'}
+        {
+            'src': '../images/f-linkedin.png',
+            'href': 'https://www.linkedin.com'
+        },
+
+        {
+            'src': '../images/f-facebook.png',
+            'href': 'https://www.facebook.com'
+        },
+
+        {
+            'src': '../images/f-twitter.png',
+            'href': 'https://www.x.com'
+        }
     ];
 
 
@@ -45,33 +55,33 @@ export const initFooter = () => {
 
 
 
-    const footer_block = document.createElement('section');
+    const footer_block = createNewElement('section');
 
-    const navigation_contacts = document.createElement('div');
+    const navigation_contacts = createNewElement('div');
 
-    const f_ele = document.createElement('div');
-    const f_ele_a = document.createElement('a');
-    const f_ele_a_img = document.createElement('img');
-    const f_ele_ul_navigation = document.createElement('ul');
-    const f_ele_social_icons = document.createElement('div');
+    const f_ele = createNewElement('div');
+    const f_ele_a = createNewElement('a');
+    const f_ele_a_img = createNewElement('img');
+    const f_ele_ul_navigation = createNewElement('ul');
+    const f_ele_social_icons = createNewElement('div');
 
-    const frame26 = document.createElement('div');
-    const frame26_contact_us = document.createElement('div');
-    const contact_us_header = document.createElement('div');
-    const contact_us_info = document.createElement('div');
+    const frame26 = createNewElement('div');
+    const frame26_contact_us = createNewElement('div');
+    const contact_us_header = createNewElement('div');
+    const contact_us_info = createNewElement('div');
 
-    const frame26_subs_block = document.createElement('div');
-    const subs_block_field = document.createElement('div');
-    const subs_block_btn = document.createElement('button');
-    const subs_block_field_p = document.createElement('p');
+    const frame26_subs_block = createNewElement('div');
+    const subs_block_field = createNewElement('input');
+    const subs_block_btn = createNewElement('button');
+    // const subs_block_field_p = document.createElement('p');
 
 
 
-    const f_line_text = document.createElement('div');
-    const f_line = document.createElement('div');
-    const f_text = document.createElement('div');
-    const f_text_cp = document.createElement('p');
-    const f_text_pp = document.createElement('p');
+    const f_line_text = createNewElement('div');
+    const f_line = createNewElement('div');
+    const f_text = createNewElement('div');
+    const f_text_cp = createNewElement('p');
+    const f_text_pp = createNewElement('p');
 
 
 
@@ -107,88 +117,94 @@ export const initFooter = () => {
 
 
 
-    footer_block.appendChild(navigation_contacts);
-    footer_block.appendChild(f_line_text);
+    appendChildToParent(footer_block, navigation_contacts);
+    appendChildToParent(footer_block, f_line_text);
 
-    navigation_contacts.appendChild(f_ele);
-    navigation_contacts.appendChild(frame26);
+    appendChildToParent(navigation_contacts, f_ele);
+    appendChildToParent(navigation_contacts, frame26);
 
-    f_ele.appendChild(f_ele_a);
-    f_ele.appendChild(f_ele_ul_navigation);
-    f_ele.appendChild(f_ele_social_icons);
+    appendChildToParent(f_ele, f_ele_a);
+    appendChildToParent(f_ele, f_ele_ul_navigation);
+    appendChildToParent(f_ele, f_ele_social_icons);
 
-    f_ele_a.appendChild(f_ele_a_img);
-
-
-    for(let i=0; i<navigation_data.length; i++) {
-        let li = document.createElement('li');
-        let a = document.createElement('a');
-
-        a.href = navigation_data[i]['href'];
-        a.textContent = navigation_data[i]['content'];
-
-        li.appendChild(a);
-        f_ele_ul_navigation.append(li);
-    }
+    appendChildToParent(f_ele_a, f_ele_a_img);
 
 
-    for(let i=0; i<social_icons_data.length; i++) {
-        let img = document.createElement('img');
-        img.src = social_icons_data[i]['src'];
+    navigation_data.forEach((data, idx) => {
+        let li = createNewElement('li');
+        let a = createNewElement('a');
 
-        f_ele_social_icons.appendChild(img);
-    }
+        a.href = data.href;
+        a.textContent = data.content;
+
+        appendChildToParent(li, a);
+        appendChildToParent(f_ele_ul_navigation, li);
+    });
 
 
 
+    social_icons_data.forEach((data, idx) => {
+        let a = createNewElement('a');
+        a.href = data.href;
+        a.target = "_blank";
+        let img = createNewElement('img');
+        img.src = data.src;
+
+        appendChildToParent(a, img);
+        appendChildToParent(f_ele_social_icons, a);
+    });
 
 
-    frame26.appendChild(frame26_contact_us);
-    frame26_contact_us.appendChild(contact_us_header);
+
+
+
+    appendChildToParent(frame26, frame26_contact_us);
+    appendChildToParent(frame26_contact_us, contact_us_header);
     for(let i=0; i<3; i++) {
         
-        const contact_us_header_label = document.createElement('div');
+        const contact_us_header_label = createNewElement('div');
         contact_us_header_label.className = 'contact-us-header-label';
-        contact_us_header.appendChild(contact_us_header_label);
+        appendChildToParent(contact_us_header, contact_us_header_label);
         
         if(i == 0) {
-            const contact_us_header_label_h4 = document.createElement('h4');
+            const contact_us_header_label_h4 = createNewElement('h4');
             contact_us_header_label_h4.textContent = "Contact us";
-            contact_us_header_label.appendChild(contact_us_header_label_h4);
+            appendChildToParent(contact_us_header_label, contact_us_header_label_h4);
         }
     }
 
 
-    frame26_contact_us.appendChild(contact_us_info);
-    for(let i=0; i<contact_us_info_p_data.length; i++) {
-        const contact_us_info_p = document.createElement('p');
+    appendChildToParent(frame26_contact_us, contact_us_info);
+    contact_us_info_p_data.forEach((data, idx) => {
+        const contact_us_info_p = createNewElement('p');
         contact_us_info_p.className = 'contact-us-info-p';
 
         // console.log(contact_us_info_p_data[i]);
-        contact_us_info_p.innerHTML = contact_us_info_p_data[i];
+        contact_us_info_p.innerHTML = data;
 
-        contact_us_info.appendChild(contact_us_info_p);
-    }
-
-
+        appendChildToParent(contact_us_info, contact_us_info_p);
+    });
 
 
-    frame26.appendChild(frame26_subs_block);
-    frame26_subs_block.appendChild(subs_block_field);
-    subs_block_field.appendChild(subs_block_field_p);
-    subs_block_field_p.textContent = "Email";
 
-    frame26_subs_block.appendChild(subs_block_btn);
+
+    appendChildToParent(frame26, frame26_subs_block);
+    appendChildToParent(frame26_subs_block, subs_block_field);
+    subs_block_field.placeholder = "Email";
+    // subs_block_field.appendChild(subs_block_field_p);
+    // subs_block_field_p.textContent = "Email";
+
+    appendChildToParent(frame26_subs_block, subs_block_btn);
     subs_block_btn.dataset.textFull = "Subscribe to news";
     subs_block_btn.dataset.textShort = "Subscribe";
 
 
 
 
-    f_line_text.appendChild(f_line);
-    f_line_text.appendChild(f_text);
-    f_text.appendChild(f_text_cp);
-    f_text.appendChild(f_text_pp);
+    appendChildToParent(f_line_text, f_line);
+    appendChildToParent(f_line_text, f_text);
+    appendChildToParent(f_text, f_text_cp);
+    appendChildToParent(f_text, f_text_pp);
     f_text_cp.textContent = "© 2023 Positivus. All Rights Reserved.";
     f_text_pp.textContent = "Privacy Policy";
 
@@ -200,5 +216,5 @@ export const initFooter = () => {
 
 
 
-    footer.appendChild(footer_block);
+    appendChildToParent(footer, footer_block);
 };

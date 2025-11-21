@@ -40,6 +40,68 @@ html {
     align-items: center;
 }
 
+
+.navbar-modal-outer {
+    padding: 0 6.25rem;
+    width: 100%;
+    position: absolute;
+    top: 8.75rem;
+    right: 0;
+
+    display: none;
+    background-color: #fff;
+}
+
+.navbar-modal-inner {
+    
+    padding: 1.25rem 1rem;
+    border-radius: 0.875rem; 
+    border: 0.0625rem solid var(--Dark, #191A23)
+}
+
+.modal-ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.modal-ul li button {
+
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    padding: 1.25rem 2.1875rem; 
+    align-items: flex-start;
+    gap: 0.625rem; 
+    background-color: #000;
+
+    border-radius: 0.875rem; 
+    border: 0.0625rem solid var(--Dark, #191A23); 
+
+    color: #fff;
+
+    text-align: center;
+    font-family: "Space Grotesk";
+    font-size: 1.25rem; 
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.75rem;
+
+    cursor: pointer;
+}
+
+.modal-ul li button:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+
 #menu {
     display: none;
 }
@@ -816,6 +878,7 @@ header {
     display: flex;
     align-items: center;
     gap: 0.9375rem;
+    cursor: pointer;
 }
 
 .case-study .link p {
@@ -944,6 +1007,10 @@ header {
     width: 3.625rem; 
     height: 3.625rem; 
     flex-shrink: 0;
+}
+
+.icon:hover {
+    cursor: pointer;
 }
 
 .team-subheading {
@@ -1126,6 +1193,11 @@ header {
     line-height: 1.75rem; 
 }
 
+.goc-button > a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .testimonials-subheading {
     margin-top: 6.25rem; 
 
@@ -1201,10 +1273,13 @@ header {
 }
 
 .testimonial-cards {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2.5rem; 
+
+    transition: transform 0.6s cubic-bezier(.45,.05,.55,.95); /* smooth animation */
 }
 
 .testimonial-navigation {
@@ -1723,7 +1798,7 @@ footer {
     width: 100%;
     display: flex;
     padding: 3.625rem 2.5rem; 
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     gap: 1.25rem; 
 
@@ -1733,13 +1808,19 @@ footer {
 
 .subs-block-field {
     display: flex;
-    width: 285px;
-    padding: 1.375rem 2.1875rem; 
+    width: 50%;
+    padding: 20px 35px; 
     align-items: flex-start;
     gap: 0.625rem; 
 
     border-radius: 0.875rem; 
     border: 0.0625rem solid #FFF; 
+    background-color: #292A32;
+    color: #fff;
+}
+
+.subs-block-field:focus {
+    outline: none;
 }
 
 .subs-block-field p {
@@ -1753,7 +1834,7 @@ footer {
 }
 
 .subs-block-button {
-    width: 285px;
+    width: 50%;
     display: flex;
     padding: 20px 35px;
     align-items: flex-start;
@@ -1847,6 +1928,69 @@ footer {
 
 
 
+.loader-container {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+}
+
+.loader {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-svg {
+    width: 36px;
+    height: 36px;
+    animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+
+
+
+.pb-card {
+    transition: background-color 0.6s ease;
+}
+
+.pb-card.expanded {
+    background-color: #B9FF66;
+}
+
+.pb-extra {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.8s ease, opacity 0.5s ease; /* default = collapse speed */
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pb-extra.open {
+    max-height: 400px;
+    opacity: 1;
+}
+
+
+.pb-line {
+    width: 100%;
+    height: 1px;
+    background: black;
+}
+
+.icon img {
+    transition: transform 0.6s ease;
+}
 
 
 
@@ -2012,12 +2156,14 @@ footer {
         width: 15rem;
     }
 
-
+    .subs-block-button::before {
+        content: attr(data-text-short)
+    }
 
 }
 
 /* ===== TABLETS LANDSCAPE (768px - 1023px) ===== */
-@media (max-width: 1023px) { 
+@media (max-width: 1024px) { 
 
     html {
         font-size: 13px;
@@ -2153,9 +2299,17 @@ footer {
 /* ===== TABLETS PORTRAIT / MOBILE LANDSCAPE (640px - 767px) ===== */
 @media (max-width: 767px) { 
 
-    .subs-block-button::before {
-        content: attr(data-text-short)
+    .services-subheading .services-text,
+    .case-studies-subheading .case-studies-text,
+    .process-subheading .process-text,
+    .team-subheading .team-text,
+    .testimonials-subheading .testimonials-text,
+    .contact-subheading .contact-text {
+        width: 100%;
+        text-align: center;
+        text-wrap: wrap;
     }
+    
     
 
 }
@@ -2189,8 +2343,8 @@ footer {
         align-items: center;
     }
 
-    .services-subheading #services-text,
-    .case-studies-subheading #case-studies-text,
+    .services-subheading .services-text,
+    .case-studies-subheading .case-studies-text,
     .process-subheading .process-text,
     .team-subheading .team-text,
     .testimonials-subheading .testimonials-text,
@@ -2241,7 +2395,7 @@ footer {
 
     .navbar {
         margin-top: 0;
-        padding: 1.25rem 1rem;
+        padding: 16px;
     } 
     
     header {
@@ -2322,6 +2476,15 @@ footer {
 
     .subs-block-button::before {
         content: attr(data-text-full)
+    }
+
+    .navbar-modal-outer {
+        top: 3.25rem;
+        padding: 1.25rem 1rem;
+    }
+
+    .goc-btn-div {
+        padding: 1.25rem 1rem;
     }
 
 }

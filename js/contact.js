@@ -1,3 +1,7 @@
+import {createNewElement, appendChildToParent} from "./domFunctions.js";
+
+
+
 export const initContactForm = () => {
     const contact_section = document.getElementsByClassName('contact-block')[0];
 
@@ -62,13 +66,13 @@ export const initContactForm = () => {
 
 
 
-    const contact_content = document.createElement('div');
-    const contact_form = document.createElement('form');
-    const contact_radio_btns = document.createElement('div');
-    const contact_fields = document.createElement('div');
-    const contact_btn = document.createElement('button');
+    const contact_content = createNewElement('div');
+    const contact_form = createNewElement('form');
+    const contact_radio_btns = createNewElement('div');
+    const contact_fields = createNewElement('div');
+    const contact_btn = createNewElement('button');
 
-    const contact_section_img = document.createElement('img');
+    const contact_section_img = createNewElement('img');
 
 
 
@@ -79,49 +83,44 @@ export const initContactForm = () => {
     contact_section_img.className = "contact-illustration";
 
 
+    
 
 
+    radio_btn_data.forEach((data, idx) => {
+        
+        let radio_btn = createNewElement('div');
+        let radio_btn_img = createNewElement('img');
+        let radio_btn_text = createNewElement('p');
+
+        radio_btn.className = data.radio_btn_div_classname;
+        radio_btn_img.id = data.radio_btn_img_id;
+        radio_btn_img.src = data.radio_btn_img_src;
+        radio_btn_text.className = data.radio_btn_text_classname;
+        radio_btn_text.textContent = data.radio_btn_text_content;
 
 
+        appendChildToParent(radio_btn, radio_btn_img);
+        appendChildToParent(radio_btn, radio_btn_text);
 
+        appendChildToParent(contact_radio_btns, radio_btn);
 
-
-
-    const numOfBtns = 2;
-    for(let i=0; i<numOfBtns; i++) {
-        let radio_btn = document.createElement('div');
-        let radio_btn_img = document.createElement('img');
-        let radio_btn_text = document.createElement('p');
-
-        radio_btn.className = radio_btn_data[i]['radio_btn_div_classname'];
-        radio_btn_img.id = radio_btn_data[i]['radio_btn_img_id'];
-        radio_btn_img.src = radio_btn_data[i]['radio_btn_img_src'];
-        radio_btn_text.className = radio_btn_data[i]['radio_btn_text_classname'];
-        radio_btn_text.textContent = radio_btn_data[i]['radio_btn_text_content'];
-
-
-        radio_btn.appendChild(radio_btn_img);
-        radio_btn.appendChild(radio_btn_text);
-
-        contact_radio_btns.appendChild(radio_btn);
-
-    }
+    });
 
 
 
 
     contact_field_data.forEach((data, idx) => {
-        const field = document.createElement('div');
+        const field = createNewElement('div');
         field.id = data.field_id;
 
-        const field_div = document.createElement('div');
-        const field_div_p = document.createElement('p');
-        const field_div_span = document.createElement('span');
+        const field_div = createNewElement('div');
+        const field_div_p = createNewElement('p');
+        const field_div_span = createNewElement('span');
 
         field_div_p.textContent = data.field_p_content;
         field_div_span.textContent = data.field_span_content;
 
-        const input_field = document.createElement(data.input_field_tag.trim());
+        const input_field = createNewElement(data.input_field_tag.trim());
         input_field.id = data.input_field_id;
         input_field.name = data.input_field_name;
         
@@ -132,13 +131,13 @@ export const initContactForm = () => {
         input_field.required = data.required;
 
 
-        field_div.appendChild(field_div_p);
-        field_div.appendChild(field_div_span);
+        appendChildToParent(field_div, field_div_p);
+        appendChildToParent(field_div, field_div_span);
 
-        field.appendChild(field_div);
-        field.appendChild(input_field);
+        appendChildToParent(field, field_div);
+        appendChildToParent(field, input_field);
 
-        contact_fields.appendChild(field);
+        appendChildToParent(contact_fields, field);
     });
 
 
@@ -147,16 +146,16 @@ export const initContactForm = () => {
     contact_section_img.src = "../images/contact-Illustration.png";
 
 
-    contact_form.appendChild(contact_radio_btns);
-    contact_form.appendChild(contact_fields);
-    contact_form.appendChild(contact_btn);
+    appendChildToParent(contact_form, contact_radio_btns);
+    appendChildToParent(contact_form, contact_fields);
+    appendChildToParent(contact_form, contact_btn);
 
 
 
-    contact_content.appendChild(contact_form);
+    appendChildToParent(contact_content, contact_form);
 
 
-    contact_section.appendChild(contact_content);
-    contact_section.appendChild(contact_section_img);
+    appendChildToParent(contact_section, contact_content);
+    appendChildToParent(contact_section, contact_section_img);
 
 };

@@ -1,3 +1,7 @@
+import {createNewElement, appendChildToParent} from './domFunctions.js';
+
+
+
 export const initCaseStudies = () => {
     const case_studies = document.getElementsByClassName('case-studies')[0];
 
@@ -22,40 +26,40 @@ export const initCaseStudies = () => {
     ];
 
 
-    for(let idx in case_studies_content) {
+    
+    case_studies_content.forEach((data, idx) => {
 
-        let case_study_section = document.createElement('section');
-        let case_study_section_p = document.createElement('p');
-        let case_study_section_link = document.createElement('div');
-        let case_study_section_link_p = document.createElement('p');
-        let case_study_section_link_img = document.createElement('img');
-        let line = document.createElement('div');
+        let case_study_section = createNewElement('section');
+        let case_study_section_p = createNewElement('p');
+        let case_study_section_link = createNewElement('div');
+        let case_study_section_link_p = createNewElement('p');
+        let case_study_section_link_img = createNewElement('img');
+        let line = createNewElement('div');
 
 
         case_study_section.className = "case-study";
         case_study_section_link.className = "link";
         line.className = "line";
 
-        case_study_section_p.innerHTML = case_studies_content[idx]["case_study_section_p"];
-        case_study_section_link_p.innerHTML = case_studies_content[idx]["case_study_section_link_p"];
-        case_study_section_link_img.src = case_studies_content[idx]["case_study_section_link_img_path"];
+        case_study_section_p.innerHTML = data.case_study_section_p;
+        case_study_section_link_p.innerHTML = data.case_study_section_link_p;
+        case_study_section_link_img.src = data.case_study_section_link_img_path;
 
 
-        case_study_section.appendChild(case_study_section_p);
-        case_study_section.appendChild(case_study_section_link);
+        appendChildToParent(case_study_section, case_study_section_p);
+        appendChildToParent(case_study_section, case_study_section_link);
 
-        case_study_section_link.appendChild(case_study_section_link_p);
-        case_study_section_link.appendChild(case_study_section_link_img);
+        appendChildToParent(case_study_section_link, case_study_section_link_p);
+        appendChildToParent(case_study_section_link, case_study_section_link_img);
 
 
-        case_studies.appendChild(case_study_section);
+        appendChildToParent(case_studies, case_study_section);
 
-        if(parseInt(idx) === case_studies_content.length-1) {
-            break;
+        if(parseInt(idx) !== case_studies_content.length-1) {
+            appendChildToParent(case_studies, line);
         }
 
-        case_studies.appendChild(line);
 
-    }
+    });
 
 };
