@@ -51,10 +51,13 @@ export const initNavbar = (frame10_data) => {
 
     frame9_a.href = "/";
     frame9_a_img.src = "../images/Frame 9.png";
+    // if(window.innerWidth > 400) {
+    //     frame9_a_img.src = "../images/Frame 9.png";
+    // } else {
+    //     frame9_a_img.src = "../images/small-logo.png";
+    // }
     frame9_a_img.alt = "logo";
     menu.src = "../images/menu.png";
-    menu.style.width = "36px";
-    menu.style.height = "36px";
 
 
     appendChildToParent(frame9_a, frame9_a_img);
@@ -99,7 +102,7 @@ export const initNavbar = (frame10_data) => {
     
     appendChildToParent(modal, modal_ul);
     appendChildToParent(outer_modal, modal)
-    appendChildToParent(landingpage, outer_modal);
+    appendChildToParent(document.body, outer_modal);
     
     
     
@@ -110,6 +113,12 @@ export const initNavbar = (frame10_data) => {
             outer_modal.style.display = "none";
             menu.src = "../images/menu.png";
         }
+
+        // if(width > 400) {
+        //     frame9_a_img.src = "../images/Frame 9.png";
+        // } else {
+        //     frame9_a_img.src = "../images/small-logo.png";
+        // }
 
     });
     

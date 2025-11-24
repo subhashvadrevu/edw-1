@@ -12,6 +12,10 @@
     scroll-behavior: smooth;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .homepage {
     width: 100%;
     background: var(--bg);
@@ -24,28 +28,37 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 4.375rem;
+    margin-top: 70px;
 }
 
 .navbar {
-    margin-top: 3.75rem; 
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    z-index: 100;
+
+    margin-top: 40px;
     display: flex;
     width: 100%;
-    height: 4.25rem; 
-    padding: 0 6.25rem;
+    height: 88px; 
+    padding: 0.5rem 6.25rem;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 0px 1px #F3F3F3;
 }
 
 
 .navbar-modal-outer {
+    z-index: 101;
     padding: 0 6.25rem;
     width: 100%;
-    position: absolute;
-    top: 8.75rem;
+    position: fixed;
+    top: 6rem;
     right: 0;
 
     display: none;
     background-color: #fff;
+
 }
 
 .navbar-modal-inner {
@@ -100,6 +113,10 @@
 
 #menu {
     display: none;
+}
+
+#menu:hover {
+    cursor: pointer;
 }
 
 .frame9 {
@@ -1034,7 +1051,6 @@ header {
     background-color: #B9FF66;
     display: flex;
     gap: 30px;
-
 }
 
 .pb-extra {
@@ -1048,7 +1064,7 @@ header {
 }
 
 .pb-extra.open {
-    max-height: 120px;
+    max-height: 400px;
     opacity: 1;
     display: flex;
     gap: 1.875rem;
@@ -2770,8 +2786,46 @@ footer {
         display: block;
     }
 
+    header {
+        gap: 8px;
+    }
+
+    header .illustration {
+        padding: 0 16px;
+    }
+
+    header .illustration img {
+        height: 309.622px;
+        flex-shrink: 0;
+        align-self: stretch;
+    }
+
+    .frame13 {
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .frame13 h1, .frame13 p {
+        text-align: start;
+        margin: 0 16px;
+    }
+
+    .frame13 button {
+        margin-top: 18px;
+    }
+
+
+
     .logotypes {
         margin-top: 38px;
+        column-gap: 48px;
+        row-gap: 24px;
+        padding: 0;
+    }
+
+    .logotypes img {
+        height: 40px;
+        width: 100%;
     }
 
     .services-subheading {
@@ -2908,11 +2962,14 @@ footer {
     .card {
         height: fit-content;
         width: 100%;
-        padding: 24px;
+        padding: 30px 24px;
         
     }
 
     .textnbtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
         gap: 28px;
     }
@@ -2984,17 +3041,32 @@ footer {
         margin-top: 0;
         padding: 0 16px;
         padding-bottom: 20px;
+        width: 100%;
+    }
+    
+    .case-studies {
+        height: 242px;
+        width: 100%;
+        flex-direction: row;
+        padding: 28px 24px;
+        overflow-x: auto;
     }
 
-    .case-studies {
-        padding: 28px 24px;
+    .case-studies::-webkit-scrollbar {
+        display: none;
+    }
+
+    .case-studies .line {
+        display: none;
     }
 
     .case-study {
         gap: 20px;
+        width: 100%;
     }
 
     .case-study > p{
+        width: 286px;
         color: #FFF;
         font-family: "Space Grotesk";
         font-size: 16px;
@@ -3022,6 +3094,7 @@ footer {
         margin-top: 38px;
         gap: 20px;
         padding: 0 16px;
+        padding-top: 20px;
     }
 
 
@@ -3042,12 +3115,13 @@ footer {
         padding-bottom: 20px;
     }
 
-    .pb-card {
+    .process-block .pb-card {
         display: flex;
         height: 80px;
-        padding: 20px 24px;
+        padding: 16px 20px;
         flex-direction: column;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
         gap: 10px;
         align-self: stretch;
 
@@ -3057,14 +3131,15 @@ footer {
         box-shadow: 0 5px 0 0 #191A23;
     }
 
-    .pb-card .pb-content {
+    .process-block .pb-card .pb-content {
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         align-self: stretch;
     }
 
-    .pb-card .pb-content .pb-label {
+    .process-block .pb-card .pb-content .pb-label {
         display: flex;
         align-items: center;
         gap: 25px;
@@ -3077,7 +3152,7 @@ footer {
         aspect-ratio: 1/1;
     }
 
-    .pb-card .pb-content .pb-label .pb-number {
+    .process-block .pb-card .pb-content .pb-label .pb-number {
         color: #000;
         font-family: "Space Grotesk";
         font-size: 30px;
@@ -3086,8 +3161,8 @@ footer {
         line-height: normal;
     }
 
-    .pb-card .pb-content .pb-label .pb-text {
-        width: 100%;
+    .process-block .pb-card .pb-content .pb-label .pb-text {
+        width: 219px;
         color: #000;
         font-family: "Space Grotesk";
         font-size: 16px;
@@ -3098,6 +3173,7 @@ footer {
 
     .pb-card.expanded {
         height: fit-content;
+        background-color: #B9FF66;
         gap: 6px;
     }
 
@@ -3232,7 +3308,7 @@ footer {
 
 
     .testimonials-subheading {
-        margin-top: 58px;
+        margin-top: 38px;
         padding: 0;
         padding-top: 20px;
         gap: 20px;
@@ -3296,14 +3372,42 @@ footer {
         margin-top: 28px;
         padding: 0 16px;
         padding-bottom: 20px;
+        height: fit-content;
     }
 
-    .contact-block .contact-content {
+    .contact-content {
         padding: 20px 16px;
+        height: fit-content;
     }
 
     .contact-radio-btns {
         width: 100%;
+        gap: 24px;
+    }
+
+    .contact-form {
+        gap: 26px;
+        height: fit-content;
+    }
+
+    .contact-fields {
+        gap: 16px;
+    }
+
+    .contact-radio-btn1,
+    .contact-radio-btn2 {
+        display: flex;
+        padding: 6px;
+        align-items: center;
+        gap: 11px;
+        height: fit-content;
+    }
+
+    #contact-radio-btn1-img,
+    #contact-radio-btn2-img {
+        width: 20px;
+        height: 20px;
+        aspect-ratio: 1/1;
     }
 
     .contact-radio-btn1-p,
@@ -3315,6 +3419,13 @@ footer {
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+    }
+
+
+    .contact-fields #field1,
+    .contact-fields #field2,
+    .contact-fields #field3 {
+        gap: 5px;
     }
 
 
@@ -3343,6 +3454,16 @@ footer {
         background: #FFF;
     }
 
+    .contact-fields #field1 #name,
+    .contact-fields #field2 #email {
+        height: 47px;
+    }
+
+    .contact-fields #field3 #message {
+        height: 127px;
+    }
+
+
     .contact-fields #field1 #name::placeholder ,
     .contact-fields #field2 #email::placeholder ,
     .contact-fields #field3 #message::placeholder {
@@ -3354,7 +3475,7 @@ footer {
         line-height: normal;
     }
 
-    .contact-form button {
+    .contact-form > button {
         display: flex;
         height: 68px;
         padding: 20px 35px;
@@ -3391,6 +3512,16 @@ footer {
 
     .navigation-contacts .f-elements {
         gap: 24px;
+    }
+
+    .f-logo {
+        display: flex;
+        width: 147px;
+        height: 23.683px;
+        padding-right: 0;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 8.651px;
     }
 
     .navigation-contacts .f-elements .navigation {
