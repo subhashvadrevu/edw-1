@@ -30,11 +30,6 @@ html {
     gap: 4.375rem;
 }
 
-button:hover {
-    cursor: pointer;
-}
-
-
 .navbar {
     margin-top: 3.75rem; 
     display: flex;
@@ -140,22 +135,21 @@ button:hover {
 
 .frame10 li button {
     display: flex;
-    padding: 1.25rem 2.1875rem; 
+    padding: 20px 35px;
     align-items: flex-start;
-    gap: 0.625rem; 
-    background-color: var(--bg);
+    gap: 10px;
+    background-color: #fff;
 
-    border-radius: 0.875rem; 
-    border: 0.0625rem solid var(--Dark, #191A23); 
+    border-radius: 14px;
+    border: 1px solid var(--Dark, #191A23);
 
     color: #000;
-
     text-align: center;
     font-family: "Space Grotesk";
-    font-size: 1.25rem; 
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.75rem;
+    line-height: 28px;
 
     cursor: pointer;
 }
@@ -713,27 +707,33 @@ header {
 
 .cta-block {
     width: 100%;
-    height: 24.625rem; 
+    height: 24.625rem;
     flex-shrink: 0;
 
     margin-top: 6.25rem; 
+
+    display: flex;
 }
 
 .cta {
     display: flex;
     width: 100%;
-    padding: 0 6.25rem; 
+    padding: 0 6.25rem;
     align-items: center;
+    gap: -44.6875rem;
+
 }
 
 .card {
     display: flex;
     width: 100%;
     height: 21.6875rem;
-    padding: 0 3.75rem; 
+    padding: 0 3.75rem;
     align-items: center;
+    gap: 17.1875rem;
 
     position: relative;
+    flex-shrink: 0;
 
     border-radius: 2.8125rem;
     background: var(--Grey, #F3F3F3);
@@ -741,20 +741,19 @@ header {
 
 .frame19 {
     position: absolute;
-    right: 10rem;
-
     display: flex;
+    right: 6.25rem;
+    height: 24.625rem;
+    padding-right: 8.4375rem;
     align-items: center;
-    justify-content: center;
 }
 
 .frame19 #illustration {
-    width: 22.4375rem; 
-    height: 24.6418rem;
+    width: 22.4375rem;
+    height: 24.64181rem;
 }
 
 .textnbtn {
-    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -762,6 +761,9 @@ header {
 }
 
 .textnbtn h3 {
+
+    width: 31.25rem;
+
     color: #000;
 
     font-family: "Space Grotesk";
@@ -772,6 +774,9 @@ header {
 }
 
 .textnbtn p {
+
+    width: 31.25rem;
+
     color: #000;
 
     font-size: 1.125rem; 
@@ -854,6 +859,9 @@ header {
 }
 
 .case-studies {
+
+    width: 100%;
+
     display: flex;
     padding: 4.375rem 3.75rem; 
     align-items: flex-start;
@@ -915,6 +923,13 @@ header {
 .process-subheading .process-text {
     width: 18.25rem; 
     flex-shrink: 0;
+
+    color: #000;
+    font-family: "Space Grotesk";
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .process-subheading .process-header {
@@ -969,15 +984,18 @@ header {
     padding: 2.5625rem 3.75rem; 
     flex-direction: column;
     align-items: space-between;
-    gap: 0.625rem;
+    justify-content: center;
 
     border-radius: 2.8125rem; 
     border: 0.0625rem solid #191A23; 
     background: var(--Grey, #F3F3F3);
     box-shadow: 0 0.3125rem 0 0 #191A23; 
+
+    transition: background-color 0.6s ease;
 }
 
 .process-block .pb-card .pb-content {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -999,7 +1017,8 @@ header {
 }
 
 .process-block .pb-card .pb-content .pb-label .pb-text {
-    
+    width: 100%;
+
     color: #000;
     font-family: "Space Grotesk";
     font-size: 1.875rem; 
@@ -1012,6 +1031,53 @@ header {
     width: 3.625rem; 
     height: 3.625rem; 
     flex-shrink: 0;
+}
+
+.pb-card.expanded {
+    background-color: #B9FF66;
+    display: flex;
+    gap: 30px;
+
+}
+
+.pb-extra {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.8s ease, opacity 0.5s ease; /* default = collapse speed */
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pb-extra.open {
+    max-height: 120px;
+    opacity: 1;
+    display: flex;
+    gap: 1.875rem;
+    display: flex;
+}
+
+
+.pb-line {
+    width: 100%;
+    height: 1px;
+    background: black;
+}
+
+
+.pb-desc {
+    font-family: "Space Grotesk";
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    height: 60px;
+}
+
+
+.icon img {
+    transition: transform 0.6s ease;
 }
 
 .icon:hover {
@@ -1079,7 +1145,7 @@ header {
 
 .goc-card {
     display: flex;
-    height: 20.6875rem; 
+    /* width: 24.1875rem; */
     padding: 2.5rem 2.1875rem;
     flex-direction: column;
     align-items: flex-start;
@@ -1089,6 +1155,18 @@ header {
     border: 0.0625rem solid #191A23; 
     background: #FFF;
     box-shadow: 0 0.3125rem 0 0 #191A23; 
+}
+
+.goc-card1 {
+    height: 20.6875rem;
+}
+
+.goc-card2, .goc-card3 {
+    height: 20.67646rem;
+}
+
+.goc-card4, .goc-card5, .goc-card6 {
+    height: 22.125rem;
 }
 
 .goc-content {
@@ -1243,6 +1321,7 @@ header {
 .testimonials-text {
     width: 29.5625rem; 
     flex-shrink: 0;
+    font-size: 1.125rem;
 
     display: flex;
     flex-direction: column;
@@ -1259,7 +1338,7 @@ header {
 .tstn {
     display: flex;
     flex-direction: column;
-    gap: 4rem; 
+    gap: 7.75rem; 
     width: 100%;
     padding: 5.25rem 0 4.25rem 0; 
     border-radius: 2.8125rem; 
@@ -1270,7 +1349,8 @@ header {
     width: 100%;
     display: flex;
     overflow-x: auto;
-    gap: 2.5rem; 
+    justify-content: space-between;
+    align-items: flex-start; 
 }
 
 .tst::-webkit-scrollbar {
@@ -1295,10 +1375,6 @@ header {
     gap: 7.75rem; 
 }
 
-.testimonial-navigation #left-arrow, .testimonial-navigation #right-arrow {
-    cursor: pointer;
-}
-
 .testimonial-navigation .nav-stars {
     display: flex;
     justify-content: center;
@@ -1316,7 +1392,13 @@ header {
 }
 
 .testimonial-content {
-    width: 75%;
+    color: #FFF;
+    font-family: "Space Grotesk";
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 31.375rem;
     position: absolute;
     top: 25%;
     left: 50%;
@@ -1526,6 +1608,7 @@ header {
 
     display: flex;
     width: 100%;
+    height: 3.6875rem;
     padding: 1.125rem 1.875rem; 
     align-items: flex-start;
     gap: 0.625rem; 
@@ -1559,6 +1642,7 @@ header {
 
 .contact-fields #field2 #email {
     width: 100%;
+    height: 3.6875rem;
     color: #000;
     font-family: "Space Grotesk";
     font-size: 1rem; 
@@ -1677,6 +1761,7 @@ footer {
 
 .footer-block {
     width: 100%;
+    height: 514px;
     display: flex;
     padding: 3.4375rem 3.75rem 3.125rem 3.75rem; 
     flex-direction: column;
@@ -1817,7 +1902,8 @@ footer {
 
 .subs-block-field {
     display: flex;
-    width: 50%;
+    width: 51.45%;
+    height: 67px;
     padding: 20px 35px; 
     align-items: flex-start;
     gap: 0.625rem; 
@@ -1826,24 +1912,25 @@ footer {
     border: 0.0625rem solid #FFF; 
     background-color: #292A32;
     color: #fff;
+
+    color: #FFF;
+    font-family: "Space Grotesk";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .subs-block-field:focus {
     outline: none;
 }
 
-.subs-block-field p {
-    color: #FFF;
-
-    font-family: "Space Grotesk";
-    font-size: 1.125rem; 
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
+.subs-block-field::placeholder {
+    color: #fff;
+}   
 
 .subs-block-button {
-    width: 50%;
+    width: 44.95%;
     display: flex;
     padding: 20px 35px;
     align-items: flex-start;
@@ -1883,8 +1970,8 @@ footer {
 .f-text {
     width: 100%;
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-start;
     gap: 2.5rem; 
 }
 
@@ -1967,46 +2054,6 @@ footer {
 
 
 
-.pb-card {
-    transition: background-color 0.6s ease;
-}
-
-.pb-card.expanded {
-    background-color: #B9FF66;
-}
-
-.pb-extra {
-    overflow: hidden;
-    max-height: 0;
-    opacity: 0;
-    transition: max-height 0.8s ease, opacity 0.5s ease; /* default = collapse speed */
-    gap: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.pb-extra.open {
-    max-height: 400px;
-    opacity: 1;
-}
-
-
-.pb-line {
-    width: 100%;
-    height: 1px;
-    background: black;
-}
-
-.icon img {
-    transition: transform 0.6s ease;
-}
-
-
-
-
-
-
-
 
 
 
@@ -2030,13 +2077,105 @@ footer {
 
     .subs-block-button { 
         width: 100%;
+        height: fit-content;
     }
 
     .subs-block-field {
         width: 100%;
+        height: fit-content;
+    }
+
+    .footer-block {
+        height: fit-content;
     }
 
 
+}
+
+@media (width: 1440px) {
+    .case-studies {
+        width: 1234px;
+    }
+
+    .process-block .pb-card {
+    display: flex;
+    width: 77.125rem;
+    padding: 2.5625rem 3.75rem; 
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: center;
+
+    border-radius: 2.8125rem; 
+    border: 0.0625rem solid #191A23; 
+    background: var(--Grey, #F3F3F3);
+    box-shadow: 0 0.3125rem 0 0 #191A23; 
+
+    transition: background-color 0.6s ease;
+}
+
+.process-block .pb-card .pb-content {
+    width: 69.8125rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.process-block .pb-card .pb-content .pb-label {
+    display: flex;
+    align-items: center;
+    gap: 1.5625rem; 
+}
+
+.process-block .pb-card .pb-content .pb-label .pb-number {
+    color: #000;
+    font-family: "Space Grotesk";
+    font-size: 3.75rem; 
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.process-block .pb-card .pb-content .pb-label .pb-text {
+    width: 38.25rem;
+
+    color: #000;
+    font-family: "Space Grotesk";
+    font-size: 1.875rem; 
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.process-block .pb-card .pb-content .pb-icon {
+    width: 3.625rem; 
+    height: 3.625rem; 
+    flex-shrink: 0;
+}
+
+.pb-card.expanded {
+    background-color: #B9FF66;
+    display: flex;
+    gap: 30px;
+
+}
+
+.pb-extra {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.8s ease, opacity 0.5s ease; /* default = collapse speed */
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pb-extra.open {
+    max-height: 120px;
+    opacity: 1;
+    display: flex;
+    gap: 1.875rem;
+    display: flex;
+}
 }
 
 /* ===== SMALL DESKTOPS / LARGE TABLETS (1024px - 1279px) ===== */
@@ -2169,6 +2308,8 @@ footer {
         content: attr(data-text-short)
     }
 
+    
+
 }
 
 /* ===== TABLETS LANDSCAPE (768px - 1023px) ===== */
@@ -2178,12 +2319,18 @@ footer {
         font-size: 13px;
     }
 
+    .navbar {
+        align-items: center;
+    }
+
     .frame10 { 
         display: none;
     }
     
     #menu {
         display: block;
+        width: 24px;
+        height: 24px;
     }
 
     header {
@@ -2303,10 +2450,20 @@ footer {
         justify-content: center;
     }
 
+    .frame19 {
+        display: none;
+    }
+
+    .textnbtn {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
 }
 
 /* ===== TABLETS PORTRAIT / MOBILE LANDSCAPE (640px - 767px) ===== */
-@media (max-width: 767px) { 
+@media (max-width: 767px) {
 
     .services-subheading .services-text,
     .case-studies-subheading .case-studies-text,
@@ -2402,26 +2559,96 @@ footer {
         font-size: 11px;
     }
 
+    .landingpage {
+        gap: 38px;
+    }
+
     .navbar {
         margin-top: 0;
         padding: 16px;
+        margin-bottom: 0;
     } 
     
     header {
-        padding: 1.25rem 1rem;
+        display: flex;
+        padding: 20px 16px;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 26px;
+        align-self: stretch;
     }
+
+    .frame13 h1 {
+        width: 285px;
+        color: #000;
+        font-family: "Space Grotesk";
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    .frame13 p {
+        width: 329px;
+        color: #000;
+        font-family: "Space Grotesk";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+    }
+
+    .frame13 button {
+        width: 100%;
+        display: flex;
+        height: 68px;
+        padding: 20px 35px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+        border-radius: 14px;
+        text-align: center;
+        background: var(--Dark, #191A23);
+
+        color: #FFF;
+        text-align: center;
+        font-family: "Space Grotesk";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px; /* 140% */
+    }
+
 
     .logotypes {
         padding: 1.25rem 1rem;
     }
 
     .services-subheading {
-        padding: 1.25rem 1rem;
+        margin-top: 20px;
+        /* padding: 1.25rem 1rem; */
+        width: 100%;
+        padding: 0;
+        gap: 28px;
     }
+
+    .services-text {
+        width: 329px;
+        text-wrap: wrap;
+    }
+
+    .services-block .cards-section .card1 {
+        margin-top: 28px;
+    }
+
+
 
     .services-block .cards-section {
         padding: 1.25rem 1rem;
+
     }
+
 
     .cta {
         padding: 1.25rem 1rem;
@@ -2495,5 +2722,306 @@ footer {
     .goc-btn-div {
         padding: 1.25rem 1rem;
     }
+
+
+
+    .services-subheading {
+        margin-top: 0;
+        padding: 20px 0;
+        gap: 20px;
+        
+    }
+
+}
+
+
+
+
+@media (max-width: 394px) {
+
+    .landingpage {
+        gap: 0px;
+    }
+
+    .navbar {
+        display: flex;
+        width: 393px;
+        height: 64px;
+        padding: 16px;
+        justify-content: space-between;
+        align-items: center;
+
+        background: #FFF;
+        box-shadow: 3.79px 3.79px 14.23px 0 rgba(0, 0, 0, 0.05);
+    }
+
+
+    .frame9 {
+        display: flex;
+        padding: 3px 0;
+        align-items: flex-start;
+        gap: 5.284px;
+    }
+
+
+    .frame10 {
+        display: none;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    .logotypes {
+        margin-top: 38px;
+    }
+
+    .services-subheading {
+        margin-top: 58px;
+        padding: 0;
+    }
+
+    .testimonials-subheading .services-header {
+        display: flex;
+        padding: 0 7px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+
+        border-radius: 7px;
+        background: var(--Green, #B9FF66);
+    }
+
+    .services-subheading .services-header .label .testimonials-h2,
+    .case-studies-subheading .case-studies-header .label .testimonials-h2,
+    .process-subheading .process-header .label .testimonials-h2 {
+        color: #000;
+        font-family: "Space Grotesk";
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+
+    .services-text {
+        display: flex;
+        width: 361px;
+        padding: 0 32px;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+
+        color: #000;
+        text-align: center;
+        font-family: "Space Grotesk";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px; /* 137.5% */
+    }
+
+
+    .services-block {
+        margin-top: 28px;
+    }
+
+    .services-block .cards-section {
+        padding: 0 16px;
+        padding-bottom: 20px;
+        gap: 28px;
+    }
+
+    .services-block .cards-section .card1,
+    .services-block .cards-section .card2,
+    .services-block .cards-section .card3,
+    .services-block .cards-section .card4,
+    .services-block .cards-section .card5,
+    .services-block .cards-section .card6
+    {
+        display: flex;
+        padding: 30px 24px;
+        align-items: center;
+        align-self: stretch;
+        margin-top: 0;
+    }
+
+    .services-block .cards-section .card1 .card-left,
+    .services-block .cards-section .card2 .card-left,
+    .services-block .cards-section .card3 .card-left,
+    .services-block .cards-section .card4 .card-left,
+    .services-block .cards-section .card5 .card-left,
+    .services-block .cards-section .card6 .card-left {
+        gap: 93px;
+    }
+
+    .services-block .cards-section .card1 .card-left .heading .label,
+    .services-block .cards-section .card2 .card-left .heading .label,
+    .services-block .cards-section .card3 .card-left .heading .label,
+    .services-block .cards-section .card4 .card-left .heading .label,
+    .services-block .cards-section .card5 .card-left .heading .label,
+    .services-block .cards-section .card6 .card-left .heading .label {
+        color: #000;
+        font-family: "Space Grotesk";
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    .services-block .cards-section .card1 .card-left .link,
+    .services-block .cards-section .card2 .card-left .link,
+    .services-block .cards-section .card3 .card-left .link,
+    .services-block .cards-section .card4 .card-left .link,
+    .services-block .cards-section .card5 .card-left .link,
+    .services-block .cards-section .card6 .card-left .link {
+        font-family: "Space Grotesk";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px; /* 140% */
+    }
+
+
+    .services-block .cards-section .card1 .card-left .link img,
+    .services-block .cards-section .card2 .card-left .link img,
+    .services-block .cards-section .card3 .card-left .link img,
+    .services-block .cards-section .card4 .card-left .link img,
+    .services-block .cards-section .card5 .card-left .link img,
+    .services-block .cards-section .card6 .card-left .link img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .cta-block {
+        margin-top: 28px;
+        height: fit-content;
+    }
+
+    .cta {
+        padding: 20px 16px;
+        height: fit-content;
+        width: 100%;
+    }
+
+    .card {
+        height: fit-content;
+        width: 100%;
+        padding: 24px;
+        
+    }
+
+    .textnbtn {
+        width: 100%;
+        gap: 28px;
+    }
+
+    .textnbtn h3 {
+        width: 100%;
+        color: #000;
+        font-family: "Space Grotesk";
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        align-self: stretch;
+        text-align: start;
+    }
+
+    .textnbtn p {
+        width: 100%;
+        color: #000;
+        font-family: "Space Grotesk";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: start;
+    }
+
+    .textnbtn button {
+        display: flex;
+        padding: 20px 35px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+
+        border-radius: 14px;
+        background: var(--Dark, #191A23);
+
+        color: #FFF;
+        text-align: center;
+        font-family: "Space Grotesk";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px; /* 140% */
+    }
+
+    .case-studies-subheading {
+        margin-top: 38px;
+        gap: 20px;
+        padding: 0 16px;
+        padding-bottom: 28px;
+        padding-top: 20px; 
+    }
+
+    .case-studies-text {
+        width: 326px;
+        color: #000;
+        text-align: center;
+        font-family: "Space Grotesk";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding: 0 16px;
+    }
+
+    .case-studies-block {
+        margin-top: 0;
+        padding: 0 16px;
+        padding-bottom: 20px;
+    }
+
+    .case-studies {
+        padding: 28px 24px;
+    }
+
+    .case-study {
+        gap: 20px;
+    }
+
+    .case-study > p{
+        color: #FFF;
+        font-family: "Space Grotesk";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .case-study .link {
+        gap: 15px;
+    }
+
+    .case-study .link p {
+        color: var(--Green, #B9FF66);
+        font-family: "Space Grotesk";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px; /* 140% */
+    }
+
+
+
+    .process-subheading {
+        margin-top: 38px;
+        gap: 20px;
+        padding: 0 16px;
+    }
+
 
 }
